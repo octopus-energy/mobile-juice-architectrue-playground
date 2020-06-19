@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "me.ianalexander.androidApp",
+  "applicationId": "com.octopus.ejplayground",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "AndroidManifest.xml",
       "properties": {
-        "packageId": "me.ianalexander.androidApp",
+        "packageId": "com.octopus.ejplayground",
         "split": "",
         "minSdkVersion": "24"
       }

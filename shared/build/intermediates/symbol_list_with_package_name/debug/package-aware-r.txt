@@ -1,4 +1,4 @@
-me.ianalexander.android
+com.octopus.ejplayground
 attr alpha
 attr font
 attr fontProviderAuthority

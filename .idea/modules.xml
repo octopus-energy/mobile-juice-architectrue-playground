@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EJArchitectureResearchPlayground.iml" filepath="$PROJECT_DIR$/.idea/modules/EJArchitectureResearchPlayground.iml" group="EJArchitectureResearchPlayground" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EJArchitectureResearchPlayground_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/EJArchitectureResearchPlayground_buildSrc.iml" group="EJArchitectureResearchPlayground/EJArchitectureResearchPlayground_buildSrc" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidApp/androidApp.iml" filepath="$PROJECT_DIR$/.idea/modules/androidApp/androidApp.iml" group="EJArchitectureResearchPlayground/androidApp" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared/shared.iml" filepath="$PROJECT_DIR$/.idea/modules/shared/shared.iml" group="EJArchitectureResearchPlayground/shared" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared/shared_commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/shared/shared_commonMain.iml" group="shared" />

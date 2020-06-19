@@ -5,7 +5,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
 }
-group = "me.ianalexander"
+group = "com.octopus.ejplayground"
 version = "1.0-SNAPSHOT"
 
 repositories {
