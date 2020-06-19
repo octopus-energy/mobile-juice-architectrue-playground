@@ -2,19 +2,21 @@
 <module external.linked.project.id=":shared:iosTest" external.linked.project.path="$MODULE_DIR$/../../../shared" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="me.ianalexander" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
-      <configuration version="3" platform="Native " allPlatforms="Native []" useProjectSettings="false" isTestModule="true" externalProjectId=":shared">
+      <configuration version="3" platform="Native (ios_x64) " allPlatforms="Native []/Native [ios_x64]" useProjectSettings="false" isTestModule="true" externalProjectId=":shared">
         <dependsOnModuleNames>:shared:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>shared_iosMain</sourceSet>
           <sourceSet>shared_commonTest</sourceSet>
+          <sourceSet>shared_iosMain</sourceSet>
           <sourceSet>shared_commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
-        <externalSystemTestTasks>iosTest|:shared:iosTest|ios</externalSystemTestTasks>
+        <externalSystemTestTasks>
+          <externalSystemTestTask>iosTest|:shared:iosTest|ios</externalSystemTestTask>
+        </externalSystemTestTasks>
         <compilerSettings />
         <compilerArguments>
           <option name="languageVersion" value="1.4" />
-          <option name="apiVersion" value="1.3" />
+          <option name="apiVersion" value="1.4" />
           <option name="pluginOptions">
             <array>
               <option value="plugin:org.jetbrains.kotlin.android:experimental=false" />
@@ -43,7 +45,6 @@
     </content>
     <orderEntry type="jdk" jdkName="Kotlin SDK" jdkType="KotlinSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="shared_iosMain" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-annotations-common:1.4-M2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-common:1.4-M2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4-M2" level="project" />
@@ -57,1173 +58,142 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="shared_commonMain" scope="TEST" />
+    <orderEntry type="module" module-name="shared_iosMain" scope="TEST" />
     <orderEntry type="module" module-name="shared_commonTest" scope="TEST" production-on-test="" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MediaPlayer [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - VisionKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreText [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MetalKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - QuickLook [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - PhotosUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreServices [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreNFC [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - JavaScriptCore [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - OpenGLES [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreImage [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Photos [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - SystemConfiguration [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - IdentityLookup [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - HealthKitUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreBluetooth [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - LinkPresentation [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - GSS [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ImageIO [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - FileProvider [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - NotificationCenter [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreTelephony [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - IdentityLookupUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - objc [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreLocation [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MobileCoreServices [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - PencilKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - darwin [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - WatchConnectivity [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - IntentsUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Foundation [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ExternalAccessory [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - builtin [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - DeviceCheck [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - EAGL [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ImageCaptureCore [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Accelerate [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - PushKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - VideoToolbox [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AddressBookUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - BusinessChat [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Accounts [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ClassKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - UserNotifications [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - UserNotificationsUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ARKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AuthenticationServices [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - NetworkExtension [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - EventKitUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AssetsLibrary [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MessageUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - IOSurface [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Intents [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MapKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CryptoTokenKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - NaturalLanguage [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - HealthKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Social [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ModelIO [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AVKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AdSupport [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreML [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreVideo [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreMIDI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - BackgroundTasks [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Speech [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - iconv [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - HomeKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Vision [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MediaAccessibility [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - GLKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AudioToolbox [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - PassKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CommonCrypto [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - GameplayKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - OpenAL [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Contacts [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CarPlay [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MetalPerformanceShaders [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - FileProviderUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - UIKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - PDFKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - zlib [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreSpotlight [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - GameController [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - iAd [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreMedia [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - QuickLookThumbnailing [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - SoundAnalysis [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ReplayKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - OpenGLESCommon [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - SceneKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreData [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - NewsstandKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreGraphics [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AutomaticAssessmentConfiguration [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - LocalAuthentication [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Twitter [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - VideoSubscriberAccount [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreAudioKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - SpriteKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AddressBook [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MetricKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - SafariServices [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MultipeerConnectivity [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - ContactsUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - StoreKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreAudio [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - EventKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreHaptics [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - posix [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - MediaToolbox [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - OpenGLES2 [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Messages [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Network [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreMotion [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Metal [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - WebKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CFNetwork [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - AVFoundation [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - GameKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - OpenGLES3 [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CallKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CloudKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - Security [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - QuartzCore [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - stdlib" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreFoundation [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M2 - CoreAudioTypes [ios_x64]" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../shared/build/classes/kotlin/ios/main/shared.klib!/" />
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.4-M2/83a2b1b2994ac4f8857864ba98987a246e2e9a18/kotlin-stdlib-common-1.4-M2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/common/stdlib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreFoundation" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Network" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.QuartzCore" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Security" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CloudKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.VideoSubscriberAccount" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.OpenGLES3" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.GameKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AVFoundation" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CFNetwork" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.WebKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Metal" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreMotion" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.iconv" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Messages" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.OpenGLES2" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MediaToolbox" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.posix" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreHaptics" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.EventKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreAudio" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.StoreKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ContactsUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MultipeerConnectivity" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.SafariServices" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MetricKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AddressBook" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.SpriteKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreAudioKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreText" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Twitter" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.LocalAuthentication" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AutomaticAssessmentConfiguration" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreGraphics" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.NewsstandKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreData" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.SceneKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.OpenGLESCommon" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ReplayKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.SoundAnalysis" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.QuickLookThumbnailing" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreMedia" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.iAd" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.GameController" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreSpotlight" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.zlib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.PDFKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.UIKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.FileProviderUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MetalPerformanceShaders" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CarPlay" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Contacts" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.OpenAL" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.GameplayKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CommonCrypto" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.PassKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AudioToolbox" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.GLKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MediaAccessibility" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Vision" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.HomeKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreServices" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Speech" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.BackgroundTasks" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreAudioTypes" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CallKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreML" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AdSupport" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AVKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ModelIO" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Social" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.HealthKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.NaturalLanguage" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CryptoTokenKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MapKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Intents" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.IOSurface" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MessageUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AssetsLibrary" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.EventKitUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.NetworkExtension" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AuthenticationServices" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ARKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.UserNotificationsUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.UserNotifications" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ClassKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Accounts" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.BusinessChat" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.AddressBookUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.VideoToolbox" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.PushKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Accelerate" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ImageCaptureCore" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.EAGL" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.DeviceCheck" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.builtin" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreMIDI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreVideo" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.IntentsUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.WatchConnectivity" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.darwin" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.PencilKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MobileCoreServices" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreLocation" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.objc" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.IdentityLookupUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreTelephony" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.NotificationCenter" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.FileProvider" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ImageIO" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.GSS" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.LinkPresentation" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.ExternalAccessory" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Foundation" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.IdentityLookup" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.SystemConfiguration" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.Photos" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreImage" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.OpenGLES" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.JavaScriptCore" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreBluetooth" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.HealthKitUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.PhotosUI" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.QuickLook" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.CoreNFC" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MediaPlayer" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.MetalKit" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-prebuilt-macos-1.4-M2/klib/platform/ios_x64/org.jetbrains.kotlin.native.platform.VisionKit" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
