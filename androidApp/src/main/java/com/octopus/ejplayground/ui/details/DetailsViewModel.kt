@@ -1,7 +1,7 @@
 package com.octopus.ejplayground.ui.details
 
 import com.octopus.ejplayground.di.SingleActivity
-import com.octopus.ejplayground.services.GithubRepoEntity
+import com.octopus.ejplayground.domain.GithubRepo
 import com.octopus.ejplayground.domain.Navigator
 import com.octopus.ejplayground.ui.base.BaseViewModel
 import com.octopus.ejplayground.ui.base.BaseViewState
@@ -13,18 +13,18 @@ class DetailsViewModel @Inject constructor(
 ) : BaseViewModel<DetailsViewModel.ViewState>() {
 
     override var lastViewState: ViewState = ViewState()
-    private lateinit var githubRepoEntity: GithubRepoEntity
+    private lateinit var githubRepo: GithubRepo
 
-    fun initData(githubRepoEntity: GithubRepoEntity) {
-        this.githubRepoEntity = githubRepoEntity
+    fun initData(githubRepo: GithubRepo) {
+        this.githubRepo = githubRepo
         emit(lastViewState.copy(
-                toolbarTitle = githubRepoEntity.name,
-                urlAddress = githubRepoEntity.url
+                toolbarTitle = githubRepo.name,
+                urlAddress = githubRepo.url
         ))
     }
 
     fun onGoToRepositoryClicked() {
-        navigator.goToUrl(githubRepoEntity.url)
+        navigator.goToUrl(githubRepo.url)
     }
 
     data class ViewState(

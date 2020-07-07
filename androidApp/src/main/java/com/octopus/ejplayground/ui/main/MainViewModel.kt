@@ -2,7 +2,8 @@ package com.octopus.ejplayground.ui.main
 
 import com.octopus.ejplayground.di.SingleActivity
 import com.octopus.ejplayground.domain.Announcer
-import com.octopus.ejplayground.services.GithubRepoEntity
+import com.octopus.ejplayground.domain.GithubRepo
+import com.octopus.ejplayground.domain.GithubRepoManager
 import com.octopus.ejplayground.services.GithubService
 import com.octopus.ejplayground.domain.Navigator
 import com.octopus.ejplayground.ui.base.BaseViewModel
@@ -13,7 +14,7 @@ import javax.inject.Inject
 
 @SingleActivity
 class MainViewModel @Inject constructor(
-        private val githubService: GithubService,
+        private val githubRepoManager: GithubRepoManager,
         private val navigator: Navigator,
         private val announcer: Announcer
 ) : BaseViewModel<MainViewModel.ViewState>() {
@@ -23,7 +24,7 @@ class MainViewModel @Inject constructor(
 
     fun loadResults() {
         emit(lastViewState.copy(loadingIsVisible = true))
-        githubService.fetchCodeRepos(TEST_USER)
+        githubRepoManager.fetchSortedRepos(TEST_USER)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -39,12 +40,12 @@ class MainViewModel @Inject constructor(
                 ).addToComposite()
     }
 
-    fun repoClicked(githubRepoEntity: GithubRepoEntity) {
-        navigator.goToDetails(githubRepoEntity)
+    fun repoClicked(githubRepo: GithubRepo) {
+        navigator.goToDetails(githubRepo)
     }
 
     data class ViewState(
             val loadingIsVisible: Boolean = false,
-            val results: List<GithubRepoEntity> = listOf()
+            val results: List<GithubRepo> = listOf()
     ) : BaseViewState
 }

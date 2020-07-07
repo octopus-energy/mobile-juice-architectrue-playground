@@ -3,7 +3,7 @@ package com.octopus.ejplayground.ui.details
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.navigation.NavArgs
-import com.octopus.ejplayground.services.GithubRepoEntity
+import com.octopus.ejplayground.domain.GithubRepo
 import java.io.Serializable
 import java.lang.IllegalArgumentException
 import java.lang.UnsupportedOperationException
@@ -11,17 +11,17 @@ import kotlin.Suppress
 import kotlin.jvm.JvmStatic
 
 data class DetailsFragmentArgs(
-  val repository: GithubRepoEntity
+  val repository: GithubRepo
 ) : NavArgs {
   @Suppress("CAST_NEVER_SUCCEEDS")
   fun toBundle(): Bundle {
     val result = Bundle()
-    if (Parcelable::class.java.isAssignableFrom(GithubRepoEntity::class.java)) {
+    if (Parcelable::class.java.isAssignableFrom(GithubRepo::class.java)) {
       result.putParcelable("repository", this.repository as Parcelable)
-    } else if (Serializable::class.java.isAssignableFrom(GithubRepoEntity::class.java)) {
+    } else if (Serializable::class.java.isAssignableFrom(GithubRepo::class.java)) {
       result.putSerializable("repository", this.repository as Serializable)
     } else {
-      throw UnsupportedOperationException(GithubRepoEntity::class.java.name +
+      throw UnsupportedOperationException(GithubRepo::class.java.name +
           " must implement Parcelable or Serializable or must be an Enum.")
     }
     return result
@@ -31,13 +31,13 @@ data class DetailsFragmentArgs(
     @JvmStatic
     fun fromBundle(bundle: Bundle): DetailsFragmentArgs {
       bundle.setClassLoader(DetailsFragmentArgs::class.java.classLoader)
-      val __repository : GithubRepoEntity?
+      val __repository : GithubRepo?
       if (bundle.containsKey("repository")) {
-        if (Parcelable::class.java.isAssignableFrom(GithubRepoEntity::class.java) ||
-            Serializable::class.java.isAssignableFrom(GithubRepoEntity::class.java)) {
-          __repository = bundle.get("repository") as GithubRepoEntity?
+        if (Parcelable::class.java.isAssignableFrom(GithubRepo::class.java) ||
+            Serializable::class.java.isAssignableFrom(GithubRepo::class.java)) {
+          __repository = bundle.get("repository") as GithubRepo?
         } else {
-          throw UnsupportedOperationException(GithubRepoEntity::class.java.name +
+          throw UnsupportedOperationException(GithubRepo::class.java.name +
               " must implement Parcelable or Serializable or must be an Enum.")
         }
         if (__repository == null) {

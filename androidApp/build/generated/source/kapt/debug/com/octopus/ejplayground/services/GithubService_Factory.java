@@ -11,20 +11,26 @@ import javax.inject.Provider;
 public final class GithubService_Factory implements Factory<GithubService> {
   private final Provider<GithubApiBuilder> githubApiBuilderProvider;
 
-  public GithubService_Factory(Provider<GithubApiBuilder> githubApiBuilderProvider) {
+  private final Provider<GithubRepoMapper> githubRepoMapperProvider;
+
+  public GithubService_Factory(Provider<GithubApiBuilder> githubApiBuilderProvider,
+      Provider<GithubRepoMapper> githubRepoMapperProvider) {
     this.githubApiBuilderProvider = githubApiBuilderProvider;
+    this.githubRepoMapperProvider = githubRepoMapperProvider;
   }
 
   @Override
   public GithubService get() {
-    return newInstance(githubApiBuilderProvider.get());
+    return newInstance(githubApiBuilderProvider.get(), githubRepoMapperProvider.get());
   }
 
-  public static GithubService_Factory create(Provider<GithubApiBuilder> githubApiBuilderProvider) {
-    return new GithubService_Factory(githubApiBuilderProvider);
+  public static GithubService_Factory create(Provider<GithubApiBuilder> githubApiBuilderProvider,
+      Provider<GithubRepoMapper> githubRepoMapperProvider) {
+    return new GithubService_Factory(githubApiBuilderProvider, githubRepoMapperProvider);
   }
 
-  public static GithubService newInstance(GithubApiBuilder githubApiBuilder) {
-    return new GithubService(githubApiBuilder);
+  public static GithubService newInstance(GithubApiBuilder githubApiBuilder,
+      GithubRepoMapper githubRepoMapper) {
+    return new GithubService(githubApiBuilder, githubRepoMapper);
   }
 }

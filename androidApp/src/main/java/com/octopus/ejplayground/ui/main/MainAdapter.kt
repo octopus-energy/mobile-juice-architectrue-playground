@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.octopus.ejplayground.R
-import com.octopus.ejplayground.services.GithubRepoEntity
+import com.octopus.ejplayground.domain.GithubRepo
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
 class MainAdapter(
-        private val listener: (GithubRepoEntity) -> Unit
+        private val listener: (GithubRepo) -> Unit
 ) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
-    private var items: List<GithubRepoEntity> = listOf()
+    private var items: List<GithubRepo> = listOf()
 
     override fun getItemCount(): Int {
         return items.size
@@ -34,7 +34,7 @@ class MainAdapter(
         holder.bind(items[position], listener)
     }
 
-    fun addAll(items: List<GithubRepoEntity>) {
+    fun addAll(items: List<GithubRepo>) {
         this.items = items
         notifyDataSetChanged()
     }
@@ -42,8 +42,8 @@ class MainAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(
-                repository: GithubRepoEntity,
-                listener: (GithubRepoEntity) -> Unit
+                repository: GithubRepo,
+                listener: (GithubRepo) -> Unit
         ) {
             with(itemView) {
                 r_main_txt.text = repository.name

@@ -3,6 +3,7 @@ package com.octopus.ejplayground.di;
 
 import com.octopus.ejplayground.App;
 import com.octopus.ejplayground.services.GithubApiBuilder_Factory;
+import com.octopus.ejplayground.services.GithubRepoMapper_Factory;
 import com.octopus.ejplayground.services.GithubService;
 import com.octopus.ejplayground.services.GithubService_Factory;
 import com.octopus.ejplayground.ui.AndroidPlaygroundActivity;
@@ -135,7 +136,7 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
         public FragmentModule_DetailsFragment.DetailsFragmentSubcomponent.Factory get() {
           return new DetailsFragmentSubcomponentFactory();}
       };
-      this.githubServiceProvider = GithubService_Factory.create(GithubApiBuilder_Factory.create());
+      this.githubServiceProvider = GithubService_Factory.create(GithubApiBuilder_Factory.create(), GithubRepoMapper_Factory.create());
       this.arg0Provider = InstanceFactory.create(arg0Param);
       this.navigatorImplProvider = DoubleCheck.provider(NavigatorImpl_Factory.create(arg0Provider));
       this.announcerImplProvider = DoubleCheck.provider(AnnouncerImpl_Factory.create(arg0Provider));

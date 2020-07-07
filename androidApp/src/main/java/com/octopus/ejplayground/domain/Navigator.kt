@@ -1,8 +1,6 @@
 package com.octopus.ejplayground.domain
 
-import com.octopus.ejplayground.services.GithubRepoEntity
-
 interface Navigator {
-    fun goToDetails(githubRepoEntity: GithubRepoEntity)
+    fun goToDetails(githubRepo: GithubRepo)
     fun goToUrl(url: String)
 }
