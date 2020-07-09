@@ -35,6 +35,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("stdlib-jdk7"))
                 implementation(KmpLibrary.serialisation)
+                implementation(AndroidLibrary.javaInject)
             }
         }
         val iosMain by getting {

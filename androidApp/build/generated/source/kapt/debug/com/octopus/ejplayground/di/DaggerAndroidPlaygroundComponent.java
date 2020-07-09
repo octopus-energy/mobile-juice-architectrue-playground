@@ -2,6 +2,8 @@
 package com.octopus.ejplayground.di;
 
 import com.octopus.ejplayground.App;
+import com.octopus.ejplayground.App_MembersInjector;
+import com.octopus.ejplayground.TestInjection;
 import com.octopus.ejplayground.domain.GithubRepoManager;
 import com.octopus.ejplayground.domain.GithubRepoManager_Factory;
 import com.octopus.ejplayground.services.GithubApiBuilder_Factory;
@@ -78,6 +80,7 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
 
   private App injectApp(App instance) {
     DaggerApplication_MembersInjector.injectAndroidInjector(instance, getDispatchingAndroidInjectorOfObject());
+    App_MembersInjector.injectTestInjection(instance, new TestInjection());
     return instance;
   }
 

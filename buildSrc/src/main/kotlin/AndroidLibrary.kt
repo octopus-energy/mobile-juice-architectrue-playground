@@ -24,6 +24,8 @@ internal object AndroidLibraryVersion {
 }
 
 object AndroidLibrary {
+    val javaInject = "javax.inject:javax.inject:1"
+
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${PluginVersion.kotlin}"
     val appCompat = "androidx.appcompat:appcompat:${AndroidLibraryVersion.appCompat}"
     val core = "androidx.core:core-ktx:${AndroidLibraryVersion.core}"
