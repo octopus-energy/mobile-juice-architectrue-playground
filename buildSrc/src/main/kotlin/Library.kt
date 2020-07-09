@@ -18,9 +18,7 @@ internal object LibraryVersion {
     val firebasePerformance = "19.0.7"
     val coreKotlinExt = "1.2.0"
     val leakCanary = "2.3"
-    val retrofit = "2.5.0"
-    val rxJava = "2.2.9"
-    val rxAndroid = "2.1.1"
+    val retrofit = "2.6.0"
     val glide = "4.11.0"
     val jUnit = "4.12"
 }
@@ -56,10 +54,6 @@ object Library {
 
     val retrofit = "com.squareup.retrofit2:retrofit:${LibraryVersion.retrofit}"
     val retrofitGson = "com.squareup.retrofit2:converter-gson:${LibraryVersion.retrofit}"
-    val retrofitRx = "com.squareup.retrofit2:adapter-rxjava2:${LibraryVersion.retrofit}"
-
-    val rxJava = "io.reactivex.rxjava2:rxjava:${LibraryVersion.rxJava}"
-    val rxAndroid = "io.reactivex.rxjava2:rxandroid:${LibraryVersion.rxAndroid}"
 
     val currencyConverter = "com.github.roadmaptravel:Curry:${LibraryVersion.curry}"
     val recyclerAnimators = "jp.wasabeef:recyclerview-animators:${LibraryVersion.wasabeef}"

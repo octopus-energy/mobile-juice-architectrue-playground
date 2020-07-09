@@ -1,7 +1,6 @@
 package com.octopus.ejplayground.services
 
 import com.octopus.ejplayground.domain.GithubRepo
-import io.reactivex.Observable
 import javax.inject.Inject
 
 class GithubService @Inject constructor(
@@ -11,8 +10,7 @@ class GithubService @Inject constructor(
 
     private val githubApi: GitHubApi = githubApiBuilder.buildApi()
 
-    fun fetchCodeRepos(username: String): Observable<List<GithubRepo>> {
-        return githubApi.fetchCodeRepos(username)
-            .map { githubRepoMapper.map(it) }
+    suspend fun fetchCodeRepos(username: String): List<GithubRepo> {
+        return githubRepoMapper.map(githubApi.fetchCodeRepos(username))
     }
 }

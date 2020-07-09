@@ -10,6 +10,8 @@ import com.octopus.ejplayground.extensions.requireAppCompatActivity
 import com.octopus.ejplayground.ui.base.BaseFragment
 import com.octopus.ejplayground.ui.base.LifecycleReceiver
 import kotlinx.android.synthetic.main.fragment_details.*
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 class DetailsFragment : BaseFragment() {
@@ -44,10 +46,9 @@ class DetailsFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        val disposable = detailsViewModel.viewStateEmitter.subscribe {
+        detailsViewModel.viewStateStream().onEach {
             requireAppCompatActivity().supportActionBar?.title = it.toolbarTitle
             a_details_txt.text = it.urlAddress
-        }
-        compositeDisposable.add(disposable)
+        }.launchIn(coroutineScope)
     }
 }

@@ -2,8 +2,8 @@
 package com.octopus.ejplayground.ui.main;
 
 import com.octopus.ejplayground.domain.Announcer;
+import com.octopus.ejplayground.domain.GithubRepoManager;
 import com.octopus.ejplayground.domain.Navigator;
-import com.octopus.ejplayground.services.GithubService;
 import dagger.internal.Factory;
 import javax.inject.Provider;
 
@@ -12,31 +12,31 @@ import javax.inject.Provider;
     "rawtypes"
 })
 public final class MainViewModel_Factory implements Factory<MainViewModel> {
-  private final Provider<GithubService> githubServiceProvider;
+  private final Provider<GithubRepoManager> githubRepoManagerProvider;
 
   private final Provider<Navigator> navigatorProvider;
 
   private final Provider<Announcer> announcerProvider;
 
-  public MainViewModel_Factory(Provider<GithubService> githubServiceProvider,
+  public MainViewModel_Factory(Provider<GithubRepoManager> githubRepoManagerProvider,
       Provider<Navigator> navigatorProvider, Provider<Announcer> announcerProvider) {
-    this.githubServiceProvider = githubServiceProvider;
+    this.githubRepoManagerProvider = githubRepoManagerProvider;
     this.navigatorProvider = navigatorProvider;
     this.announcerProvider = announcerProvider;
   }
 
   @Override
   public MainViewModel get() {
-    return newInstance(githubServiceProvider.get(), navigatorProvider.get(), announcerProvider.get());
+    return newInstance(githubRepoManagerProvider.get(), navigatorProvider.get(), announcerProvider.get());
   }
 
-  public static MainViewModel_Factory create(Provider<GithubService> githubServiceProvider,
+  public static MainViewModel_Factory create(Provider<GithubRepoManager> githubRepoManagerProvider,
       Provider<Navigator> navigatorProvider, Provider<Announcer> announcerProvider) {
-    return new MainViewModel_Factory(githubServiceProvider, navigatorProvider, announcerProvider);
+    return new MainViewModel_Factory(githubRepoManagerProvider, navigatorProvider, announcerProvider);
   }
 
-  public static MainViewModel newInstance(GithubService githubService, Navigator navigator,
+  public static MainViewModel newInstance(GithubRepoManager githubRepoManager, Navigator navigator,
       Announcer announcer) {
-    return new MainViewModel(githubService, navigator, announcer);
+    return new MainViewModel(githubRepoManager, navigator, announcer);
   }
 }

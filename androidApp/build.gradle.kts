@@ -24,7 +24,6 @@ dependencies {
     implementation(Library.kotlin)
     implementation(Library.coroutinesCore)
     implementation(Library.coroutinesAndroid)
-    implementation(Library.coroutinesRx2)
 
     implementation(Library.appCompat)
     implementation(Library.core)
@@ -45,10 +44,6 @@ dependencies {
 
     implementation(Library.retrofit)
     implementation(Library.retrofitGson)
-    implementation(Library.retrofitRx)
-
-    implementation(Library.rxJava)
-    implementation(Library.rxAndroid)
 }
 
 android {
@@ -67,5 +62,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.ExperimentalStdlibApi"
+        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
+        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.time.ExperimentalTime"
     }
 }

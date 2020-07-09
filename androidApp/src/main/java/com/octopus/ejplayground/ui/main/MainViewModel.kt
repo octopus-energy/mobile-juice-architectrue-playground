@@ -4,12 +4,12 @@ import com.octopus.ejplayground.di.SingleActivity
 import com.octopus.ejplayground.domain.Announcer
 import com.octopus.ejplayground.domain.GithubRepo
 import com.octopus.ejplayground.domain.GithubRepoManager
-import com.octopus.ejplayground.services.GithubService
 import com.octopus.ejplayground.domain.Navigator
 import com.octopus.ejplayground.ui.base.BaseViewModel
 import com.octopus.ejplayground.ui.base.BaseViewState
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @SingleActivity
@@ -24,20 +24,16 @@ class MainViewModel @Inject constructor(
 
     fun loadResults() {
         emit(lastViewState.copy(loadingIsVisible = true))
-        githubRepoManager.fetchSortedRepos(TEST_USER)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        {
-                            emit(lastViewState.copy(results = it))
-                        },
-                        {
-                            announcer.announce(it.toString())
-                        },
-                        {
-                            emit(lastViewState.copy(loadingIsVisible = false))
-                        }
-                ).addToComposite()
+        coroutineScope.launch {
+            try {
+                val result = withContext(Dispatchers.IO) { githubRepoManager.fetchSortedRepos(TEST_USER) }
+                emit(lastViewState.copy(loadingIsVisible = false))
+                emit(lastViewState.copy(results = result))
+            } catch (e: Exception) {
+                emit(lastViewState.copy(loadingIsVisible = false))
+                announcer.announce(e.toString())
+            }
+        }
     }
 
     fun repoClicked(githubRepo: GithubRepo) {

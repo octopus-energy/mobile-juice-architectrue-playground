@@ -1,25 +1,30 @@
 package com.octopus.ejplayground.ui.base
 
 import dagger.android.support.DaggerFragment
-import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
 
 abstract class BaseFragment : DaggerFragment() {
 
-    var compositeDisposable: CompositeDisposable = CompositeDisposable()
+    private var coreroutineSupervisor = SupervisorJob()
+    protected var coroutineScope: CoroutineScope = CoroutineScope(Dispatchers.Main + coreroutineSupervisor)
 
     abstract fun getLifecycleReceivers(): List<LifecycleReceiver>
 
     override fun onStart() {
         super.onStart()
-        if (compositeDisposable.isDisposed) {
-            compositeDisposable = CompositeDisposable()
+        if (coreroutineSupervisor.isCancelled) {
+            coreroutineSupervisor = SupervisorJob()
+            coroutineScope = CoroutineScope(Dispatchers.Main + coreroutineSupervisor)
         }
         getLifecycleReceivers().forEach { it.onAttach() }
     }
 
     override fun onStop() {
         super.onStop()
-        compositeDisposable.dispose()
+        coroutineScope.cancel()
         getLifecycleReceivers().forEach { it.onDetach() }
     }
 }

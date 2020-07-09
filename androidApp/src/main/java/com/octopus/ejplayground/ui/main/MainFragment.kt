@@ -11,6 +11,8 @@ import com.octopus.ejplayground.R
 import com.octopus.ejplayground.ui.base.BaseFragment
 import com.octopus.ejplayground.ui.base.LifecycleReceiver
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 class MainFragment : BaseFragment() {
@@ -53,14 +55,13 @@ class MainFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        val disposable = mainViewModel.viewStateEmitter.subscribe {
+        mainViewModel.viewStateStream().onEach {
             if (it.loadingIsVisible) {
                 a_main_progress.visibility = View.VISIBLE
             } else {
                 a_main_progress.visibility = View.INVISIBLE
             }
             mainAdapter?.addAll(it.results)
-        }
-        compositeDisposable.add(disposable)
+        }.launchIn(coroutineScope)
     }
 }

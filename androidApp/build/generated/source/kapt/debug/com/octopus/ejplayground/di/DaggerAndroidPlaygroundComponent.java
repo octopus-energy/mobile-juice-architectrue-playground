@@ -2,6 +2,8 @@
 package com.octopus.ejplayground.di;
 
 import com.octopus.ejplayground.App;
+import com.octopus.ejplayground.domain.GithubRepoManager;
+import com.octopus.ejplayground.domain.GithubRepoManager_Factory;
 import com.octopus.ejplayground.services.GithubApiBuilder_Factory;
 import com.octopus.ejplayground.services.GithubRepoMapper_Factory;
 import com.octopus.ejplayground.services.GithubService;
@@ -102,6 +104,8 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
 
     private Provider<GithubService> githubServiceProvider;
 
+    private Provider<GithubRepoManager> githubRepoManagerProvider;
+
     private Provider<AndroidPlaygroundActivity> arg0Provider;
 
     private Provider<NavigatorImpl> navigatorImplProvider;
@@ -137,10 +141,11 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
           return new DetailsFragmentSubcomponentFactory();}
       };
       this.githubServiceProvider = GithubService_Factory.create(GithubApiBuilder_Factory.create(), GithubRepoMapper_Factory.create());
+      this.githubRepoManagerProvider = GithubRepoManager_Factory.create(githubServiceProvider);
       this.arg0Provider = InstanceFactory.create(arg0Param);
       this.navigatorImplProvider = DoubleCheck.provider(NavigatorImpl_Factory.create(arg0Provider));
       this.announcerImplProvider = DoubleCheck.provider(AnnouncerImpl_Factory.create(arg0Provider));
-      this.mainViewModelProvider = DoubleCheck.provider(MainViewModel_Factory.create(githubServiceProvider, (Provider) navigatorImplProvider, (Provider) announcerImplProvider));
+      this.mainViewModelProvider = DoubleCheck.provider(MainViewModel_Factory.create(githubRepoManagerProvider, (Provider) navigatorImplProvider, (Provider) announcerImplProvider));
       this.detailsViewModelProvider = DoubleCheck.provider(DetailsViewModel_Factory.create((Provider) navigatorImplProvider));
     }
 
