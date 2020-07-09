@@ -42,8 +42,8 @@ class MainAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(
-                repository: GithubRepo,
-                listener: (GithubRepo) -> Unit
+            repository: GithubRepo,
+            listener: (GithubRepo) -> Unit
         ) {
             with(itemView) {
                 r_main_txt.text = repository.name

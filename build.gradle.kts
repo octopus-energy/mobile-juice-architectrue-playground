@@ -3,9 +3,8 @@ buildscript {
         gradlePluginPortal()
         jcenter()
         google()
-        maven {
-            url = uri("https://dl.bintray.com/kotlin/kotlin-eap")
-        }
+        maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
+        maven { url = uri("https://kotlin.bintray.com/kotlinx") }
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4-M2")
@@ -16,9 +15,13 @@ buildscript {
 group = "com.octopus.ejplayground"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-    maven {
-        url = uri("https://dl.bintray.com/kotlin/kotlin-eap")
+allprojects {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        google()
+        jcenter()
+        maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
+        maven { url = uri("https://kotlin.bintray.com/kotlinx") }
     }
 }

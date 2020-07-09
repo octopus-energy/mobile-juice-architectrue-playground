@@ -4,7 +4,7 @@ internal object PluginVersion {
     val googleServices = "4.3.3"
     val crashlytics = "2.0.0"
     val firebasePerformance = "1.3.1"
-    val navigationArgs = LibraryVersion.navigation
+    val navigationArgs = AndroidLibraryVersion.navigation
 }
 
 object Plugin {

@@ -2,21 +2,13 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    kotlin("plugin.serialization") version "1.4-M2"
     id("com.android.library")
     id("kotlin-android-extensions")
 }
 group = "com.octopus.ejplayground"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    gradlePluginPortal()
-    google()
-    jcenter()
-    mavenCentral()
-    maven {
-        url = uri("https://dl.bintray.com/kotlin/kotlin-eap")
-    }
-}
 kotlin {
     android()
     iosX64("ios") {
@@ -30,6 +22,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))
+                implementation(KmpLibrary.serialisation)
             }
         }
         val commonTest by getting {
@@ -41,27 +34,24 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-jdk7"))
-                implementation("androidx.core:core-ktx:1.2.0")
+                implementation(KmpLibrary.serialisation)
             }
         }
-        val androidTest by getting {
-
-        }
         val iosMain by getting {
-
-        }
-        val iosTest by getting {
-
+            dependencies {
+                implementation(KmpLibrary.serialisation)
+            }
         }
     }
 }
+
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Config.compileSdk)
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(Config.minSdk)
+        targetSdkVersion(Config.targetSdk)
+        versionCode = Config.versionCode
+        versionName = Config.versionName
     }
     buildTypes {
         getByName("release") {
@@ -69,6 +59,7 @@ android {
         }
     }
 }
+
 val packForXcode by tasks.creating(Sync::class) {
     group = "build"
     val mode = System.getenv("CONFIGURATION") ?: "DEBUG"

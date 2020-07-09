@@ -36,7 +36,7 @@
         </compilerSettings>
         <compilerArguments>
           <option name="destination" value="$MODULE_DIR$/../../../shared/build/tmp/kotlin-classes/debug" />
-          <option name="classpath" value="$MODULE_DIR$/../../../shared/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/a7abc5abdd51dcf68f63007bba23f635/jetified-kotlin-stdlib-jdk7-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/6f08a87008b126d00c87e4e0f188899b/jetified-core-ktx-1.2.0-api.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/b28cda126782b5dd7e94d51e3687f78d/jetified-kotlin-android-extensions-runtime-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/54f4f5f50244d03df045bf4dffa28a2b/jetified-kotlin-stdlib-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/682a2355f22bb916a05fc83e81c67a4d/jetified-kotlin-stdlib-common-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/cc67652e5fa1f2d955b465c2e7467f5e/jetified-annotations-13.0.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/2788f28c4f4d385de9318b2956f80cad/core-1.2.0-api.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/fdeb50a25e633a48a07b9756abc3f9d6/lifecycle-runtime-2.0.0-api.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/cd8d765d89d98f7dca1aeb7cedb049e6/versionedparcelable-1.1.0-api.jar:/Users/ianalexander/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common/2.0.0/e070ffae07452331bc5684734fce6831d531785c/lifecycle-common-2.0.0.jar:/Users/ianalexander/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.0.0/bb21b9a11761451b51624ac428d1f1bb5deeac38/core-common-2.0.0.jar:/Users/ianalexander/.gradle/caches/modules-2/files-2.1/androidx.collection/collection/1.0.0/42858b26cafdaa69b6149f45dfc2894007bc2c7a/collection-1.0.0.jar:/Users/ianalexander/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.1.0/e3a6fb2f40e3a3842e6b7472628ba4ce416ea4c8/annotation-1.1.0.jar:/Users/ianalexander/Library/Android/sdk/platforms/android-29/android.jar" />
+          <option name="classpath" value="$MODULE_DIR$/../../../shared/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/521b1e6b91fb60461c81ba824715e880/jetified-kotlin-stdlib-jdk7-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/a0f6f02b968de406859f0a894106be2e/jetified-kotlin-android-extensions-runtime-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/ed3c4c338138f7d9cef2dd92f5a44610/jetified-kotlinx-serialization-runtime-jvm-0.20.0-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/674010a085468543e17516528f8d8356/jetified-kotlin-stdlib-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/40d96dcd09937f686fca3a84f3e73b0b/jetified-kotlin-stdlib-common-1.4-M2.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/ff3ec8af221170ebdda94d4c4968a8ee/jetified-annotations-13.0.jar:/Users/ianalexander/Library/Android/sdk/platforms/android-29/android.jar" />
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
           <option name="moduleName" value="shared_debug" />
@@ -63,6 +63,7 @@
               <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.4-M2/fe202588710b343e23b63fcca12d2dcae77608eb/kotlin-stdlib-1.4-M2.jar" />
               <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.2.1/3839faf625f4197acaeceeb6da000f011a2acb49/kotlinx-coroutines-core-1.2.1.jar" />
               <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+              <option value="$KOTLIN_BUNDLED$/lib/kotlinx-serialization-compiler-plugin.jar" />
             </array>
           </option>
           <option name="multiPlatform" value="true" />
@@ -167,17 +168,10 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-annotations-common:1.4-M2@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4-M2@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4-M2@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-runtime-jvm:0.20.0-1.4-M2@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4-M2@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4-M2@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.collection:collection:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.1.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.core:core-ktx:1.2.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.core:core:1.2.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-runtime:2.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.0@aar" level="project" />
     <orderEntry type="module" module-name="shared_commonMain" />
     <orderEntry type="module" module-name="shared_commonTest" scope="TEST" production-on-test="" />
   </component>

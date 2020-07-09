@@ -2,10 +2,10 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.octopus.ejplayground"
 4    android:versionCode="1"
-5    android:versionName="1.0" >
+5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="24"
+8        android:minSdkVersion="23"
 8-->/Users/ianalexander/Multiplatform/EJArchitectureResearchPlayground/androidApp/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
 9-->/Users/ianalexander/Multiplatform/EJArchitectureResearchPlayground/androidApp/src/main/AndroidManifest.xml
@@ -21,7 +21,7 @@
 15        android:allowBackup="true"
 15-->/Users/ianalexander/Multiplatform/EJArchitectureResearchPlayground/androidApp/src/main/AndroidManifest.xml:9:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/b3296ee78b6e66ec4e85ffb5f4c4c4fd/core-1.2.0/AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/edbe7317d80ef2d608fc3eac00fa982d/core-1.2.0/AndroidManifest.xml:24:18-86
 17        android:debuggable="true"
 18        android:extractNativeLibs="false"
 19        android:icon="@mipmap/ic_launcher"
@@ -51,15 +51,15 @@
 31        </activity>
 32
 33        <provider
-33-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/9a211cbc569a117cc45e96a98c5885c8/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+33-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/83b2ddbad0e77ffe976b143424cb7dbe/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
 34            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-34-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/9a211cbc569a117cc45e96a98c5885c8/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+34-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/83b2ddbad0e77ffe976b143424cb7dbe/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
 35            android:authorities="com.octopus.ejplayground.lifecycle-process"
-35-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/9a211cbc569a117cc45e96a98c5885c8/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+35-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/83b2ddbad0e77ffe976b143424cb7dbe/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
 36            android:exported="false"
-36-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/9a211cbc569a117cc45e96a98c5885c8/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+36-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/83b2ddbad0e77ffe976b143424cb7dbe/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
 37            android:multiprocess="true" />
-37-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/9a211cbc569a117cc45e96a98c5885c8/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+37-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ianalexander/.gradle/caches/transforms-2/files-2.1/83b2ddbad0e77ffe976b143424cb7dbe/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
 38    </application>
 39
 40</manifest>

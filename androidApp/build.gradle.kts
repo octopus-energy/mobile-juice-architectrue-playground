@@ -8,52 +8,42 @@ plugins {
 group = "com.octopus.ejplayground"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    gradlePluginPortal()
-    google()
-    jcenter()
-    mavenCentral()
-    maven {
-        url = uri("https://dl.bintray.com/kotlin/kotlin-eap")
-    }
-}
-
 dependencies {
     implementation(project(":shared"))
 
-    implementation(Library.kotlin)
-    implementation(Library.coroutinesCore)
-    implementation(Library.coroutinesAndroid)
+    implementation(AndroidLibrary.kotlin)
+    implementation(AndroidLibrary.coroutinesCore)
+    implementation(AndroidLibrary.coroutinesAndroid)
 
-    implementation(Library.appCompat)
-    implementation(Library.core)
-    implementation(Library.fragment)
-    implementation(Library.material)
-    implementation(Library.constraintLayout)
-    implementation(Library.lifecycleExtensions)
-    implementation(Library.coreKotlinExt)
-    implementation(Library.navigation)
-    implementation(Library.navigationUi)
-    kapt(Library.databindingCompiler)
+    implementation(AndroidLibrary.appCompat)
+    implementation(AndroidLibrary.core)
+    implementation(AndroidLibrary.fragment)
+    implementation(AndroidLibrary.material)
+    implementation(AndroidLibrary.constraintLayout)
+    implementation(AndroidLibrary.lifecycleExtensions)
+    implementation(AndroidLibrary.coreKotlinExt)
+    implementation(AndroidLibrary.navigation)
+    implementation(AndroidLibrary.navigationUi)
+    kapt(AndroidLibrary.databindingCompiler)
 
-    implementation(Library.dagger)
-    implementation(Library.daggerAndroid)
-    implementation(Library.daggerAndroidSupport)
-    kapt(Library.daggerCompiler)
-    kapt(Library.daggerAndroidCompiler)
+    implementation(AndroidLibrary.dagger)
+    implementation(AndroidLibrary.daggerAndroid)
+    implementation(AndroidLibrary.daggerAndroidSupport)
+    kapt(AndroidLibrary.daggerCompiler)
+    kapt(AndroidLibrary.daggerAndroidCompiler)
 
-    implementation(Library.retrofit)
-    implementation(Library.retrofitGson)
+    implementation(AndroidLibrary.retrofit)
+    implementation(AndroidLibrary.retrofitGson)
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Config.compileSdk)
     defaultConfig {
         applicationId = "com.octopus.ejplayground"
-        minSdkVersion(24)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(Config.minSdk)
+        targetSdkVersion(Config.targetSdk)
+        versionCode = Config.versionCode
+        versionName = Config.versionName
     }
     buildTypes {
         getByName("release") {
