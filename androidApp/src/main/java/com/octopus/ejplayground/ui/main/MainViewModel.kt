@@ -2,7 +2,7 @@ package com.octopus.ejplayground.ui.main
 
 import com.octopus.ejplayground.di.SingleActivity
 import com.octopus.ejplayground.domain.Announcer
-import com.octopus.ejplayground.domain.GithubRepo
+import com.octopus.ejplayground.GithubRepo
 import com.octopus.ejplayground.domain.GithubRepoManager
 import com.octopus.ejplayground.domain.Navigator
 import com.octopus.ejplayground.ui.base.BaseViewModel
@@ -14,9 +14,9 @@ import javax.inject.Inject
 
 @SingleActivity
 class MainViewModel @Inject constructor(
-        private val githubRepoManager: GithubRepoManager,
-        private val navigator: Navigator,
-        private val announcer: Announcer
+    private val githubRepoManager: GithubRepoManager,
+    private val navigator: Navigator,
+    private val announcer: Announcer
 ) : BaseViewModel<MainViewModel.ViewState>() {
 
     private val TEST_USER: String = "JakeWharton"

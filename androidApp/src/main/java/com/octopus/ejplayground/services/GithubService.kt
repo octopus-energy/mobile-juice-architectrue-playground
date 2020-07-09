@@ -1,6 +1,6 @@
 package com.octopus.ejplayground.services
 
-import com.octopus.ejplayground.domain.GithubRepo
+import com.octopus.ejplayground.GithubRepo
 import javax.inject.Inject
 
 class GithubService @Inject constructor(

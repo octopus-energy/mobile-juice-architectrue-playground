@@ -1,7 +1,7 @@
 package com.octopus.ejplayground.ui.details
 
 import com.octopus.ejplayground.di.SingleActivity
-import com.octopus.ejplayground.domain.GithubRepo
+import com.octopus.ejplayground.GithubRepo
 import com.octopus.ejplayground.domain.Navigator
 import com.octopus.ejplayground.ui.base.BaseViewModel
 import com.octopus.ejplayground.ui.base.BaseViewState

@@ -10,10 +10,10 @@ public final class MainFragmentDirections {
         super();
     }
     
-    @kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, xi = 2, d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\t\u0010\u0007\u001a\u00020\u0003H\u00c6\u0003J\u0013\u0010\b\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u00c6\u0001J\u0013\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u00d6\u0003J\b\u0010\r\u001a\u00020\u000eH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\t\u0010\u0011\u001a\u00020\u000eH\u00d6\u0001J\t\u0010\u0012\u001a\u00020\u0013H\u00d6\u0001R\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006\u00a8\u0006\u0014"}, d2 = {"Lcom/octopus/ejplayground/ui/main/MainFragmentDirections$ActionMainFragmentToDetailsFragment;", "Landroidx/navigation/NavDirections;", "repository", "Lcom/octopus/ejplayground/domain/GithubRepo;", "(Lcom/octopus/ejplayground/domain/GithubRepo;)V", "getRepository", "()Lcom/octopus/ejplayground/domain/GithubRepo;", "component1", "copy", "equals", "", "other", "", "getActionId", "", "getArguments", "Landroid/os/Bundle;", "hashCode", "toString", "", "androidApp_debug"})
+    @kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, xi = 2, d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\t\u0010\u0007\u001a\u00020\u0003H\u00c6\u0003J\u0013\u0010\b\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u00c6\u0001J\u0013\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u00d6\u0003J\b\u0010\r\u001a\u00020\u000eH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\t\u0010\u0011\u001a\u00020\u000eH\u00d6\u0001J\t\u0010\u0012\u001a\u00020\u0013H\u00d6\u0001R\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006\u00a8\u0006\u0014"}, d2 = {"Lcom/octopus/ejplayground/ui/main/MainFragmentDirections$ActionMainFragmentToDetailsFragment;", "Landroidx/navigation/NavDirections;", "repository", "Lcom/octopus/ejplayground/GithubRepo;", "(Lcom/octopus/ejplayground/GithubRepo;)V", "getRepository", "()Lcom/octopus/ejplayground/GithubRepo;", "component1", "copy", "equals", "", "other", "", "getActionId", "", "getArguments", "Landroid/os/Bundle;", "hashCode", "toString", "", "androidApp_debug"})
     static final class ActionMainFragmentToDetailsFragment implements androidx.navigation.NavDirections {
         @org.jetbrains.annotations.NotNull()
-        private final com.octopus.ejplayground.domain.GithubRepo repository = null;
+        private final com.octopus.ejplayground.GithubRepo repository = null;
         
         @java.lang.Override()
         public int getActionId() {
@@ -28,23 +28,23 @@ public final class MainFragmentDirections {
         }
         
         @org.jetbrains.annotations.NotNull()
-        public final com.octopus.ejplayground.domain.GithubRepo getRepository() {
+        public final com.octopus.ejplayground.GithubRepo getRepository() {
             return null;
         }
         
         public ActionMainFragmentToDetailsFragment(@org.jetbrains.annotations.NotNull()
-        com.octopus.ejplayground.domain.GithubRepo repository) {
+        com.octopus.ejplayground.GithubRepo repository) {
             super();
         }
         
         @org.jetbrains.annotations.NotNull()
-        public final com.octopus.ejplayground.domain.GithubRepo component1() {
+        public final com.octopus.ejplayground.GithubRepo component1() {
             return null;
         }
         
         @org.jetbrains.annotations.NotNull()
         public final com.octopus.ejplayground.ui.main.MainFragmentDirections.ActionMainFragmentToDetailsFragment copy(@org.jetbrains.annotations.NotNull()
-        com.octopus.ejplayground.domain.GithubRepo repository) {
+        com.octopus.ejplayground.GithubRepo repository) {
             return null;
         }
         
@@ -66,12 +66,12 @@ public final class MainFragmentDirections {
         }
     }
     
-    @kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, xi = 2, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006\u00a8\u0006\u0007"}, d2 = {"Lcom/octopus/ejplayground/ui/main/MainFragmentDirections$Companion;", "", "()V", "actionMainFragmentToDetailsFragment", "Landroidx/navigation/NavDirections;", "repository", "Lcom/octopus/ejplayground/domain/GithubRepo;", "androidApp_debug"})
+    @kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, xi = 2, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006\u00a8\u0006\u0007"}, d2 = {"Lcom/octopus/ejplayground/ui/main/MainFragmentDirections$Companion;", "", "()V", "actionMainFragmentToDetailsFragment", "Landroidx/navigation/NavDirections;", "repository", "Lcom/octopus/ejplayground/GithubRepo;", "androidApp_debug"})
     public static final class Companion {
         
         @org.jetbrains.annotations.NotNull()
         public final androidx.navigation.NavDirections actionMainFragmentToDetailsFragment(@org.jetbrains.annotations.NotNull()
-        com.octopus.ejplayground.domain.GithubRepo repository) {
+        com.octopus.ejplayground.GithubRepo repository) {
             return null;
         }
         

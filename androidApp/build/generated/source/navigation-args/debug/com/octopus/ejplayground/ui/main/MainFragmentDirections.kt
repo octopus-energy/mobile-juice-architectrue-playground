@@ -3,8 +3,8 @@ package com.octopus.ejplayground.ui.main
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.navigation.NavDirections
+import com.octopus.ejplayground.GithubRepo
 import com.octopus.ejplayground.R
-import com.octopus.ejplayground.domain.GithubRepo
 import java.io.Serializable
 import java.lang.UnsupportedOperationException
 import kotlin.Int

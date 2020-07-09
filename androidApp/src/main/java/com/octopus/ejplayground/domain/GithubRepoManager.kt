@@ -1,5 +1,6 @@
 package com.octopus.ejplayground.domain
 
+import com.octopus.ejplayground.GithubRepo
 import com.octopus.ejplayground.services.GithubService
 import javax.inject.Inject
 
