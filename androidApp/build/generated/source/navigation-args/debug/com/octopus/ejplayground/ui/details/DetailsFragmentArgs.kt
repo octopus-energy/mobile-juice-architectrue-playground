@@ -3,7 +3,7 @@ package com.octopus.ejplayground.ui.details
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.navigation.NavArgs
-import com.octopus.ejplayground.GithubRepo
+import com.octopus.ejplayground.domain.GithubRepo
 import java.io.Serializable
 import java.lang.IllegalArgumentException
 import java.lang.UnsupportedOperationException

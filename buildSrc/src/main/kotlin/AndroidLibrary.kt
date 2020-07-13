@@ -7,7 +7,6 @@ internal object AndroidLibraryVersion {
     val navigation = "2.2.1"
     val lifecycleExtensions = "2.2.0"
     val dagger = "2.26"
-    val coroutines = "1.3.4"
     val curry = "0.1.5"
     val bindingCollectionAdapter = "3.1.1"
     val wasabeef = "3.0.0"
@@ -17,6 +16,7 @@ internal object AndroidLibraryVersion {
     val firebaseCrashlytics = "17.0.0"
     val firebasePerformance = "19.0.7"
     val coreKotlinExt = "1.2.0"
+    val annotation = "1.1.0"
     val leakCanary = "2.3"
     val retrofit = "2.6.0"
     val glide = "4.11.0"
@@ -35,6 +35,7 @@ object AndroidLibrary {
     val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${AndroidLibraryVersion.lifecycleExtensions}"
     val databindingCompiler = "com.android.databinding:compiler:${PluginVersion.gradle}"
     val coreKotlinExt = "androidx.core:core-ktx:${AndroidLibraryVersion.coreKotlinExt}"
+    val annotations = "androidx.annotation:annotation:${AndroidLibraryVersion.annotation}"
 
     val navigation = "androidx.navigation:navigation-fragment-ktx:${AndroidLibraryVersion.navigation}"
     val navigationUi = "androidx.navigation:navigation-ui-ktx:${AndroidLibraryVersion.navigation}"
@@ -44,9 +45,9 @@ object AndroidLibrary {
     val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics:${AndroidLibraryVersion.firebaseCrashlytics}"
     val firebasePerformance = "com.google.firebase:firebase-perf:${AndroidLibraryVersion.firebasePerformance}"
 
-    val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${AndroidLibraryVersion.coroutines}"
-    val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${AndroidLibraryVersion.coroutines}"
-    val coroutinesRx2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${AndroidLibraryVersion.coroutines}"
+    val coroutinesCore = KmpLibrary.coroutinesCore
+    val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${KmpLibraryVersion.coroutines}"
+    val coroutinesRx2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${KmpLibraryVersion.coroutines}"
 
     val dagger = "com.google.dagger:dagger:${AndroidLibraryVersion.dagger}"
     val daggerAndroid = "com.google.dagger:dagger-android:${AndroidLibraryVersion.dagger}"

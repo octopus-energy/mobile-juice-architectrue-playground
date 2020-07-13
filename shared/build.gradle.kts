@@ -23,6 +23,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("stdlib-common"))
                 implementation(KmpLibrary.serialisation)
+                implementation(KmpLibrary.coroutinesCore)
             }
         }
         val commonTest by getting {
@@ -36,11 +37,25 @@ kotlin {
                 implementation(kotlin("stdlib-jdk7"))
                 implementation(KmpLibrary.serialisation)
                 implementation(AndroidLibrary.javaInject)
+                implementation(AndroidLibrary.retrofit)
+                implementation(AndroidLibrary.retrofitGson)
+                implementation(AndroidLibrary.annotations)
             }
         }
         val iosMain by getting {
             dependencies {
                 implementation(KmpLibrary.serialisation)
+            }
+        }
+    }
+
+    targets.all {
+        compilations.all {
+            kotlinOptions {
+                freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.ExperimentalStdlibApi"
+                freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+                freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
+                freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.time.ExperimentalTime"
             }
         }
     }

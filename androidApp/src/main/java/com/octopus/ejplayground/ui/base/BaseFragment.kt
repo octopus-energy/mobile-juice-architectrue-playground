@@ -1,5 +1,6 @@
 package com.octopus.ejplayground.ui.base
 
+import com.octopus.ejplayground.viewmodels.LifecycleReceiver
 import dagger.android.support.DaggerFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

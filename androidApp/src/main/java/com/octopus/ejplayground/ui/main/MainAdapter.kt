@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.octopus.ejplayground.R
-import com.octopus.ejplayground.GithubRepo
+import com.octopus.ejplayground.domain.GithubRepo
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
 class MainAdapter(

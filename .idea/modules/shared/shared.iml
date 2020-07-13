@@ -32,11 +32,11 @@
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings>
-          <option name="additionalArguments" value="-Xallow-no-source-files" />
+          <option name="additionalArguments" value="-Xallow-no-source-files -Xopt-in=kotlin.ExperimentalStdlibApi,kotlinx.coroutines.ExperimentalCoroutinesApi,kotlinx.coroutines.FlowPreview,kotlin.time.ExperimentalTime" />
         </compilerSettings>
         <compilerArguments>
           <option name="destination" value="$MODULE_DIR$/../../../shared/build/tmp/kotlin-classes/debug" />
-          <option name="classpath" value="$MODULE_DIR$/../../../shared/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/1311d1da1488ddcc26710f7327acc4a5/jetified-kotlin-stdlib-jdk7-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/923ba71d003ca02b3c6069d4084fb763/jetified-javax.inject-1.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/4e7b7e8bf1e73288c8d37f3f0fe20350/jetified-kotlin-android-extensions-runtime-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/1d5666123672af3e3414d7cb6fddce29/jetified-kotlinx-serialization-runtime-jvm-0.20.0-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/b3e5c1f2e5595077b34dc48d02488cc8/jetified-kotlin-stdlib-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/df1cff73cc2c3c63913dcf88b2b68c32/jetified-kotlin-stdlib-common-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/961f18d440e78fcc4865a0713c8db335/jetified-annotations-13.0.jar:/Users/ianalexander/Library/Android/sdk/platforms/android-29/android.jar" />
+          <option name="classpath" value="$MODULE_DIR$/../../../shared/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/cf75c7f31e8be50396668ef9e3ba2a24/jetified-kotlin-stdlib-jdk7-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/e766d6787afe96f9fc8208fff6e24eb6/jetified-javax.inject-1.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/579ccda16af6fcb1258a1e2221e1c098/jetified-converter-gson-2.6.0.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/60d4259768358774b66408dfbd127bf4/jetified-retrofit-2.6.0.jar:/Users/ianalexander/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.1.0/e3a6fb2f40e3a3842e6b7472628ba4ce416ea4c8/annotation-1.1.0.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/f6a326fcb587d2e6de219d6481f66dc5/jetified-kotlin-android-extensions-runtime-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/7972473e3b1113799d050946aed35314/jetified-kotlinx-serialization-runtime-jvm-0.20.0-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/1c54cab8433c96921fa108cc6142ff02/jetified-kotlinx-coroutines-core-jvm-1.3.7-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/1d57b3302a3a715c65e694f244a1910d/jetified-kotlin-stdlib-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/b7f2e2184797c76269d5093edf9b1dc5/jetified-kotlin-stdlib-common-1.4-M3.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/62352cbd03a5ee1d89c44d0be18b347d/jetified-annotations-13.0.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/2ee19fe0fce20c55e7996f6c891279e1/jetified-okhttp-3.12.0.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/bec1b37965d2670956bab78b2adb757c/jetified-okio-1.15.0.jar:/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/a9e57aeef70a77e3cc9a0f8d4c516c74/jetified-gson-2.8.5.jar:/Users/ianalexander/Library/Android/sdk/platforms/android-29/android.jar" />
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
           <option name="moduleName" value="shared_debug" />
@@ -169,11 +169,18 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-annotations-common:1.4-M3@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4-M3@jar" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.6.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.6.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4-M3@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-runtime-jvm:0.20.0-1.4-M3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.3.7-1.4-M3@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4-M3@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4-M3@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.12.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.15.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.5@jar" level="project" />
     <orderEntry type="module" module-name="shared_commonMain" />
     <orderEntry type="module" module-name="shared_commonTest" scope="TEST" production-on-test="" />
   </component>

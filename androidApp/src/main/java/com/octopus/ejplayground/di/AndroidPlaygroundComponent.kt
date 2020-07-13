@@ -7,11 +7,12 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 
 @Component(
-        modules = [
-            AndroidInjectionModule::class,
-            AndroidSupportInjectionModule::class,
-            SingleActivityModule::class
-        ]
+    modules = [
+        AndroidInjectionModule::class,
+        AndroidSupportInjectionModule::class,
+        SingleActivityModule::class,
+        ServicesModule::class
+    ]
 )
 interface AndroidPlaygroundComponent : AndroidInjector<App> {
 

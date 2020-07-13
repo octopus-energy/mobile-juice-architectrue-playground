@@ -2,11 +2,11 @@ package com.octopus.ejplayground.ui.main
 
 import com.octopus.ejplayground.di.SingleActivity
 import com.octopus.ejplayground.domain.Announcer
-import com.octopus.ejplayground.GithubRepo
+import com.octopus.ejplayground.domain.GithubRepo
 import com.octopus.ejplayground.domain.GithubRepoManager
 import com.octopus.ejplayground.domain.Navigator
-import com.octopus.ejplayground.ui.base.BaseViewModel
-import com.octopus.ejplayground.ui.base.BaseViewState
+import com.octopus.ejplayground.viewmodels.BaseViewModel
+import com.octopus.ejplayground.viewmodels.BaseViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

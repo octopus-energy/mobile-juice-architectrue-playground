@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.octopus.ejplayground.R
 import com.octopus.ejplayground.ui.base.BaseFragment
-import com.octopus.ejplayground.ui.base.LifecycleReceiver
+import com.octopus.ejplayground.viewmodels.LifecycleReceiver
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
