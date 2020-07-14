@@ -1,6 +1,6 @@
 package com.octopus.ejplayground.di;
 
-import com.octopus.ejplayground.ui.details.DetailsFragment;
+import com.octopus.ejplayground.ui.DetailsFragment;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Subcomponent;

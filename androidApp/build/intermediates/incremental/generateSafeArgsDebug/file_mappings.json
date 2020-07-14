@@ -1,1 +1,1 @@
-[{"navFile":"src/main/res/navigation/nav_graph.xml","javaFiles":["com.octopus.ejplayground.ui.main.MainFragmentDirections","com.octopus.ejplayground.ui.details.DetailsFragmentArgs"]}]
+[{"navFile":"src/main/res/navigation/nav_graph.xml","javaFiles":["com.octopus.ejplayground.ui.MainFragmentDirections","com.octopus.ejplayground.ui.DetailsFragmentArgs"]}]

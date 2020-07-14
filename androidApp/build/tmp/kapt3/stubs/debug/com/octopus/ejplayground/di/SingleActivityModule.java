@@ -8,6 +8,6 @@ public abstract interface SingleActivityModule {
     
     @org.jetbrains.annotations.NotNull()
     @dagger.android.ContributesAndroidInjector(modules = {com.octopus.ejplayground.di.FragmentModule.class, com.octopus.ejplayground.di.ActivityScopedModule.class})
-    @SingleActivity()
+    @com.octopus.ejplayground.SingleActivity()
     public abstract com.octopus.ejplayground.ui.AndroidPlaygroundActivity androidPlaygroundActivity();
 }

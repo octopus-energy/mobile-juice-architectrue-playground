@@ -9,7 +9,7 @@
     
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.octopus.ejplayground.ui.main.MainFragment"
+        android:name="com.octopus.ejplayground.ui.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main"
         >
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.octopus.ejplayground.ui.details.DetailsFragment"
+        android:name="com.octopus.ejplayground.ui.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details"
         >

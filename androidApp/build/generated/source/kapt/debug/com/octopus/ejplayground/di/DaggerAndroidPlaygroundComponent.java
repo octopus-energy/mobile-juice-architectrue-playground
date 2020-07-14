@@ -2,6 +2,7 @@
 package com.octopus.ejplayground.di;
 
 import com.octopus.ejplayground.App;
+import com.octopus.ejplayground.domain.DispatcherProvider_Factory;
 import com.octopus.ejplayground.domain.GithubRepoManager;
 import com.octopus.ejplayground.domain.GithubRepoManager_Factory;
 import com.octopus.ejplayground.services.GithubApiBuilder_Factory;
@@ -11,16 +12,16 @@ import com.octopus.ejplayground.services.GithubServiceImpl_Factory;
 import com.octopus.ejplayground.ui.AndroidPlaygroundActivity;
 import com.octopus.ejplayground.ui.AnnouncerImpl;
 import com.octopus.ejplayground.ui.AnnouncerImpl_Factory;
+import com.octopus.ejplayground.ui.DetailsFragment;
+import com.octopus.ejplayground.ui.DetailsFragment_MembersInjector;
+import com.octopus.ejplayground.ui.MainFragment;
+import com.octopus.ejplayground.ui.MainFragment_MembersInjector;
 import com.octopus.ejplayground.ui.NavigatorImpl;
 import com.octopus.ejplayground.ui.NavigatorImpl_Factory;
-import com.octopus.ejplayground.ui.details.DetailsFragment;
-import com.octopus.ejplayground.ui.details.DetailsFragment_MembersInjector;
-import com.octopus.ejplayground.ui.details.DetailsViewModel;
-import com.octopus.ejplayground.ui.details.DetailsViewModel_Factory;
-import com.octopus.ejplayground.ui.main.MainFragment;
-import com.octopus.ejplayground.ui.main.MainFragment_MembersInjector;
-import com.octopus.ejplayground.ui.main.MainViewModel;
-import com.octopus.ejplayground.ui.main.MainViewModel_Factory;
+import com.octopus.ejplayground.viewmodels.DetailsViewModel;
+import com.octopus.ejplayground.viewmodels.DetailsViewModel_Factory;
+import com.octopus.ejplayground.viewmodels.MainViewModel;
+import com.octopus.ejplayground.viewmodels.MainViewModel_Factory;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication_MembersInjector;
 import dagger.android.DispatchingAndroidInjector;
@@ -145,7 +146,7 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
       this.arg0Provider = InstanceFactory.create(arg0Param);
       this.navigatorImplProvider = DoubleCheck.provider(NavigatorImpl_Factory.create(arg0Provider));
       this.announcerImplProvider = DoubleCheck.provider(AnnouncerImpl_Factory.create(arg0Provider));
-      this.mainViewModelProvider = DoubleCheck.provider(MainViewModel_Factory.create(githubRepoManagerProvider, (Provider) navigatorImplProvider, (Provider) announcerImplProvider));
+      this.mainViewModelProvider = DoubleCheck.provider(MainViewModel_Factory.create(githubRepoManagerProvider, (Provider) navigatorImplProvider, (Provider) announcerImplProvider, DispatcherProvider_Factory.create()));
       this.detailsViewModelProvider = DoubleCheck.provider(DetailsViewModel_Factory.create((Provider) navigatorImplProvider));
     }
 

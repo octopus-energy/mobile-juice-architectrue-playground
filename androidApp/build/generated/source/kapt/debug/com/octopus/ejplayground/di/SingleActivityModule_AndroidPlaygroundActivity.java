@@ -1,5 +1,6 @@
 package com.octopus.ejplayground.di;
 
+import com.octopus.ejplayground.SingleActivity;
 import com.octopus.ejplayground.ui.AndroidPlaygroundActivity;
 import dagger.Binds;
 import dagger.Module;

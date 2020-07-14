@@ -1,12 +1,13 @@
 package com.octopus.ejplayground.di
 
+import com.octopus.ejplayground.SingleActivity
 import com.octopus.ejplayground.domain.Announcer
 import com.octopus.ejplayground.ui.AndroidPlaygroundActivity
 import com.octopus.ejplayground.domain.Navigator
 import com.octopus.ejplayground.ui.AnnouncerImpl
 import com.octopus.ejplayground.ui.NavigatorImpl
-import com.octopus.ejplayground.ui.details.DetailsFragment
-import com.octopus.ejplayground.ui.main.MainFragment
+import com.octopus.ejplayground.ui.DetailsFragment
+import com.octopus.ejplayground.ui.MainFragment
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

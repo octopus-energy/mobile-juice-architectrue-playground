@@ -1,7 +1,7 @@
 package com.octopus.ejplayground.ui
 
 import android.widget.Toast
-import com.octopus.ejplayground.di.SingleActivity
+import com.octopus.ejplayground.SingleActivity
 import com.octopus.ejplayground.domain.Announcer
 import javax.inject.Inject
 
