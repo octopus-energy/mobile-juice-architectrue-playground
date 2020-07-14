@@ -4,7 +4,7 @@
             "outputFile": "/Users/ianalexander/Multiplatform/EJArchitectureResearchPlayground/androidApp/build/intermediates/incremental/mergeDebugResources/merged.dir/values-de/values-de.xml",
             "map": [
                 {
-                    "source": "/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/43caf1380e024802dec5ca1e406621d2/core-1.2.0/res/values-de/values-de.xml",
+                    "source": "/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/f63bb2dec994b90423cae49fefac7a40/core-1.2.0/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/052373d40ff5c25243bc3546184541bd/appcompat-1.1.0/res/values-de/values-de.xml",
+                    "source": "/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/1de2e09339e562bc0ac090cbc208c313/appcompat-1.1.0/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/58b27322fb85367f8e698eed895d2235/navigation-ui-2.2.1/res/values-de/values-de.xml",
+                    "source": "/Users/ianalexander/.gradle/caches/transforms-2/files-2.1/112661fb3103132946025a93a4e31bbb/navigation-ui-2.2.1/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

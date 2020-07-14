@@ -18,7 +18,6 @@ internal object AndroidLibraryVersion {
     val coreKotlinExt = "1.2.0"
     val annotation = "1.1.0"
     val leakCanary = "2.3"
-    val retrofit = "2.6.0"
     val glide = "4.11.0"
     val jUnit = "4.12"
 }
@@ -55,8 +54,7 @@ object AndroidLibrary {
     val daggerCompiler = "com.google.dagger:dagger-compiler:${AndroidLibraryVersion.dagger}"
     val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:${AndroidLibraryVersion.dagger}"
 
-    val retrofit = "com.squareup.retrofit2:retrofit:${AndroidLibraryVersion.retrofit}"
-    val retrofitGson = "com.squareup.retrofit2:converter-gson:${AndroidLibraryVersion.retrofit}"
+    val ktorOkHttpEngine = "io.ktor:ktor-client-okhttp:${KmpLibraryVersion.ktor}"
 
     val currencyConverter = "com.github.roadmaptravel:Curry:${AndroidLibraryVersion.curry}"
     val recyclerAnimators = "jp.wasabeef:recyclerview-animators:${AndroidLibraryVersion.wasabeef}"

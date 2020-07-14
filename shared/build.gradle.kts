@@ -24,6 +24,9 @@ kotlin {
                 implementation(kotlin("stdlib-common"))
                 implementation(KmpLibrary.serialisation)
                 implementation(KmpLibrary.coroutinesCore)
+                implementation(KmpLibrary.ktor)
+                implementation(KmpLibrary.ktorJson)
+                implementation(KmpLibrary.ktorSerialisation)
             }
         }
         val commonTest by getting {
@@ -37,14 +40,16 @@ kotlin {
                 implementation(kotlin("stdlib-jdk7"))
                 implementation(KmpLibrary.serialisation)
                 implementation(AndroidLibrary.javaInject)
-                implementation(AndroidLibrary.retrofit)
-                implementation(AndroidLibrary.retrofitGson)
                 implementation(AndroidLibrary.annotations)
+                implementation(AndroidLibrary.ktorOkHttpEngine)
+                implementation(KmpLibrary.ktorSerialisation)
             }
         }
         val iosMain by getting {
             dependencies {
                 implementation(KmpLibrary.serialisation)
+                implementation(KmpLibrary.ktorSerialisation)
+                implementation(NativeLibrary.ktorClientEngine)
             }
         }
     }
