@@ -5,7 +5,7 @@
     <key>CFBundleExecutable</key>
     <string>shared</string>
     <key>CFBundleIdentifier</key>
-    <string>shared</string>
+    <string>com.octopus.ejplayground.shared</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>

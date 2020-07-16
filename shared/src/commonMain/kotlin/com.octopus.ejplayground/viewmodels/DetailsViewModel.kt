@@ -26,7 +26,7 @@ class DetailsViewModel @MakeInjectable constructor(
     }
 
     data class ViewState(
-            val toolbarTitle: String = "",
+            val toolbarTitle: String = "Title",
             val urlAddress: String = ""
     ) : BaseViewState
 }
