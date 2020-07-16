@@ -16,3 +16,35 @@ In order to maximise code reuse the app uses clean architecture and separates th
 **Domain** - Contains usecases, entities, and interfaces implemented by other layers.  
 **Repositories** - The repository pattern is used for data caching and hiding the source of data. There is a one-to-one relationship between repositories and data objects.  
 **Services** - Any data source is classified as its own service, this layer will map data sources into the domain entity model.
+
+
+#### Running Android
+Should run as is. Just click build.
+
+#### Running iOS
+A little more setup to do here
+
+**Add the shared framework**
+- Open the iOS folder in xcode
+- Double click the root to open target settings
+- In General -> Frameworks, Libraries, Embedded Content click +
+- Click Add Other and add file
+- Navigate to shared -> build -> xcode-frameworks
+- Select shared.framework
+- In the next dialog, select the Create folder references option and make sure that the Copy items if needed checkbox isn't checked. 
+
+**Tell xcode where framework is**
+- Navigate to Build settings -> All
+- Type 'Framework Search Paths' into the search field
+- Add the framework path to this section '$(SRCROOT)/../shared/build/xcode-frameworks'
+
+**Pack the framework on each build**
+- Navigate to Build Phases
+- Click +
+- Add new run script phase
+- Add the following 
+```
+cd ..
+./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}
+```
+- Move the script to run directly after Dependencies
