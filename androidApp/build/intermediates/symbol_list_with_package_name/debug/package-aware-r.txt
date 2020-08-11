@@ -1597,6 +1597,7 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
+id action_detailsFragment_to_mainFragment
 id action_divider
 id action_image
 id action_mainFragment_to_detailsFragment

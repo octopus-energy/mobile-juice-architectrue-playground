@@ -17,15 +17,9 @@ import javax.inject.Inject
 class DetailsFragment : BaseFragment() {
 
     @Inject lateinit var detailsViewModel: DetailsViewModel
-    private val args: DetailsFragmentArgs by navArgs()
 
     override fun getLifecycleReceivers(): List<LifecycleReceiver> {
         return listOf(detailsViewModel)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        detailsViewModel.initData(args.repository)
     }
 
     override fun onCreateView(

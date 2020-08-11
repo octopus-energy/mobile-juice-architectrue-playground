@@ -24,9 +24,9 @@
         android:label="fragment_details"
         tools:layout="@layout/fragment_details"
         >
-        <argument
-            android:name="repository"
-            app:argType="com.octopus.ejplayground.domain.GithubRepo"
+        <action
+            android:id="@+id/action_detailsFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
             />
     </fragment>
 </navigation>

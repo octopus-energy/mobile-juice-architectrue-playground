@@ -2,12 +2,14 @@
 package com.octopus.ejplayground.di;
 
 import com.octopus.ejplayground.App;
+import com.octopus.ejplayground.CurrentRepoRepository;
+import com.octopus.ejplayground.CurrentRepoRepository_Factory;
 import com.octopus.ejplayground.domain.DispatcherProvider_Factory;
 import com.octopus.ejplayground.domain.GithubRepoManager;
 import com.octopus.ejplayground.domain.GithubRepoManager_Factory;
 import com.octopus.ejplayground.services.GithubRepoMapper_Factory;
 import com.octopus.ejplayground.services.GithubServiceImpl;
-import com.octopus.ejplayground.services.KtorService_Factory;
+import com.octopus.ejplayground.services.GithubServiceImpl_Factory;
 import com.octopus.ejplayground.ui.AndroidPlaygroundActivity;
 import com.octopus.ejplayground.ui.AnnouncerImpl;
 import com.octopus.ejplayground.ui.AnnouncerImpl_Factory;
@@ -42,7 +44,7 @@ import javax.inject.Provider;
 public final class DaggerAndroidPlaygroundComponent implements AndroidPlaygroundComponent {
   private Provider<SingleActivityModule_AndroidPlaygroundActivity.AndroidPlaygroundActivitySubcomponent.Factory> androidPlaygroundActivitySubcomponentFactoryProvider;
 
-  private Provider<GithubServiceImpl> ktorServiceProvider;
+  private Provider<GithubServiceImpl> githubServiceImplProvider;
 
   private DaggerAndroidPlaygroundComponent() {
 
@@ -72,7 +74,7 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
           ) {
         return new AndroidPlaygroundActivitySubcomponentFactory();}
     };
-    this.ktorServiceProvider = KtorService_Factory.create(GithubRepoMapper_Factory.create());
+    this.githubServiceImplProvider = GithubServiceImpl_Factory.create(GithubRepoMapper_Factory.create());
   }
 
   @Override
@@ -109,6 +111,8 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
 
     private Provider<AndroidPlaygroundActivity> arg0Provider;
 
+    private Provider<CurrentRepoRepository> currentRepoRepositoryProvider;
+
     private Provider<NavigatorImpl> navigatorImplProvider;
 
     private Provider<AnnouncerImpl> announcerImplProvider;
@@ -141,12 +145,13 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
         public FragmentModule_DetailsFragment.DetailsFragmentSubcomponent.Factory get() {
           return new DetailsFragmentSubcomponentFactory();}
       };
-      this.githubRepoManagerProvider = GithubRepoManager_Factory.create((Provider) DaggerAndroidPlaygroundComponent.this.ktorServiceProvider);
+      this.githubRepoManagerProvider = GithubRepoManager_Factory.create((Provider) DaggerAndroidPlaygroundComponent.this.githubServiceImplProvider);
       this.arg0Provider = InstanceFactory.create(arg0Param);
-      this.navigatorImplProvider = DoubleCheck.provider(NavigatorImpl_Factory.create(arg0Provider));
+      this.currentRepoRepositoryProvider = DoubleCheck.provider(CurrentRepoRepository_Factory.create());
+      this.navigatorImplProvider = DoubleCheck.provider(NavigatorImpl_Factory.create(arg0Provider, currentRepoRepositoryProvider));
       this.announcerImplProvider = DoubleCheck.provider(AnnouncerImpl_Factory.create(arg0Provider));
       this.mainViewModelProvider = DoubleCheck.provider(MainViewModel_Factory.create(githubRepoManagerProvider, (Provider) navigatorImplProvider, (Provider) announcerImplProvider, DispatcherProvider_Factory.create()));
-      this.detailsViewModelProvider = DoubleCheck.provider(DetailsViewModel_Factory.create((Provider) navigatorImplProvider));
+      this.detailsViewModelProvider = DoubleCheck.provider(DetailsViewModel_Factory.create((Provider) navigatorImplProvider, currentRepoRepositoryProvider));
     }
 
     @Override
