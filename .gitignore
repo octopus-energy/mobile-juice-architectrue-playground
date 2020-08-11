@@ -1,0 +1,13 @@
+/.idea
+**/build
+.DS_Store
+/local.properties
+/captures
+.gradle/
+
+# CHEAT SHEET
+# **/directory - all directories of that name in the project
+# /directory - directory in the root of the project
+# file_name - file anywhere in the project
+# /file_name - file in the root of the project
+# directory/ - all directories of that name in the project
