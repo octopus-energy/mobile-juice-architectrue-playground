@@ -43,13 +43,13 @@ class MainFragment : BaseFragment() {
             savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
-        mainAdapter = MainAdapter { mainViewModel.repoClicked(it) }
+        mainAdapter = MainAdapter { mainViewModel.onAction(MainViewModel.UiAction.RepositoryClicked(it)) }
         a_main_recycler.adapter = mainAdapter
         a_main_recycler.layoutManager = LinearLayoutManager(requireActivity())
         a_main_recycler.addItemDecoration(
                 DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         )
-        a_main_btn.setOnClickListener { mainViewModel.loadResults() }
+        a_main_btn.setOnClickListener { mainViewModel.onAction(MainViewModel.UiAction.LoadReposClicked) }
     }
 
     override fun onStart() {

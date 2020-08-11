@@ -151,7 +151,7 @@ public final class DaggerAndroidPlaygroundComponent implements AndroidPlayground
       this.navigatorImplProvider = DoubleCheck.provider(NavigatorImpl_Factory.create(arg0Provider, currentRepoRepositoryProvider));
       this.announcerImplProvider = DoubleCheck.provider(AnnouncerImpl_Factory.create(arg0Provider));
       this.mainViewModelProvider = DoubleCheck.provider(MainViewModel_Factory.create(githubRepoManagerProvider, (Provider) navigatorImplProvider, (Provider) announcerImplProvider, DispatcherProvider_Factory.create()));
-      this.detailsViewModelProvider = DoubleCheck.provider(DetailsViewModel_Factory.create((Provider) navigatorImplProvider, currentRepoRepositoryProvider));
+      this.detailsViewModelProvider = DoubleCheck.provider(DetailsViewModel_Factory.create((Provider) navigatorImplProvider, DispatcherProvider_Factory.create(), currentRepoRepositoryProvider));
     }
 
     @Override

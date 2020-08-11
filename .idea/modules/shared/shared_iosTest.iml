@@ -5,9 +5,9 @@
       <configuration version="3" platform="Native (ios_x64) " allPlatforms="Native []/Native [ios_x64]" useProjectSettings="false" isTestModule="true" externalProjectId=":shared">
         <dependsOnModuleNames>:shared:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>shared_iosMain</sourceSet>
           <sourceSet>shared_commonTest</sourceSet>
           <sourceSet>shared_commonMain</sourceSet>
+          <sourceSet>shared_iosMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>
@@ -86,16 +86,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="shared_iosMain" scope="TEST" />
     <orderEntry type="module" module-name="shared_commonMain" scope="TEST" />
     <orderEntry type="module" module-name="shared_commonTest" scope="TEST" production-on-test="" />
-    <orderEntry type="module" module-name="shared_iosMain" scope="TEST" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - BackgroundTasks [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - MetalKit [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreText [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - iconv [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - BackgroundTasks [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreVideo [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Foundation [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Security [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CloudKit [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreServices [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CallKit [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreBluetooth [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - GameKit [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - AVFoundation [ios_x64]" level="project" />
@@ -103,7 +103,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - WebKit [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Metal [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreMotion [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - OpenGLES3 [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreNFC [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - ExternalAccessory [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - OpenGLES2 [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - MediaToolbox [ios_x64]" level="project" />
@@ -119,7 +119,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - AddressBook [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - SpriteKit [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreAudioKit [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreFoundation [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - VideoSubscriberAccount [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreAudioTypes [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - LocalAuthentication [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - AutomaticAssessmentConfiguration [ios_x64]" level="project" />
@@ -151,12 +151,12 @@
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - MediaAccessibility [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Vision [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - HomeKit [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - HealthKitUI [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - iconv [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Network [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - ExposureNotification [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreMIDI [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - MediaPlayer [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - VideoSubscriberAccount [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - HealthKitUI [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreML [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - AdSupport [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - AVKit [ios_x64]" level="project" />
@@ -188,7 +188,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - DeviceCheck [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - builtin [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Speech [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreNFC [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreFoundation [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - IntentsUI [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - WatchConnectivity [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - darwin [ios_x64]" level="project" />
@@ -229,7 +229,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - GSS [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - LinkPresentation [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Twitter [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CallKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - OpenGLES3 [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - IdentityLookup [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - SystemConfiguration [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Photos [ios_x64]" level="project" />
@@ -237,13 +237,13 @@
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - OpenGLES [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - JavaScriptCore [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Messages [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreVideo [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreServices [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - PhotosUI [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - QuickLook [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - stdlib" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - Foundation [ios_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - VisionKit [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - CoreText [ios_x64]" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - QuartzCore [ios_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.4-M3 - VisionKit [ios_x64]" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="shared_iosMain" />
 </module>

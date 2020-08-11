@@ -35,7 +35,7 @@ class DetailsFragment : BaseFragment() {
             savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
-        a_details_btn.setOnClickListener { detailsViewModel.onGoToRepositoryClicked() }
+        a_details_btn.setOnClickListener { detailsViewModel.onAction(DetailsViewModel.UiAction.RepositoryClicked) }
     }
 
     override fun onStart() {

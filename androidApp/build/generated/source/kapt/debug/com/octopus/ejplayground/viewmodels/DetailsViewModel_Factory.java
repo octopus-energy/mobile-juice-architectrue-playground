@@ -2,6 +2,7 @@
 package com.octopus.ejplayground.viewmodels;
 
 import com.octopus.ejplayground.CurrentRepoRepository;
+import com.octopus.ejplayground.domain.DispatcherProvider;
 import com.octopus.ejplayground.domain.Navigator;
 import dagger.internal.Factory;
 import javax.inject.Provider;
@@ -13,26 +14,31 @@ import javax.inject.Provider;
 public final class DetailsViewModel_Factory implements Factory<DetailsViewModel> {
   private final Provider<Navigator> navigatorProvider;
 
+  private final Provider<DispatcherProvider> dispatcherProvider;
+
   private final Provider<CurrentRepoRepository> gitRepoRepositoryProvider;
 
   public DetailsViewModel_Factory(Provider<Navigator> navigatorProvider,
+      Provider<DispatcherProvider> dispatcherProvider,
       Provider<CurrentRepoRepository> gitRepoRepositoryProvider) {
     this.navigatorProvider = navigatorProvider;
+    this.dispatcherProvider = dispatcherProvider;
     this.gitRepoRepositoryProvider = gitRepoRepositoryProvider;
   }
 
   @Override
   public DetailsViewModel get() {
-    return newInstance(navigatorProvider.get(), gitRepoRepositoryProvider.get());
+    return newInstance(navigatorProvider.get(), dispatcherProvider.get(), gitRepoRepositoryProvider.get());
   }
 
   public static DetailsViewModel_Factory create(Provider<Navigator> navigatorProvider,
+      Provider<DispatcherProvider> dispatcherProvider,
       Provider<CurrentRepoRepository> gitRepoRepositoryProvider) {
-    return new DetailsViewModel_Factory(navigatorProvider, gitRepoRepositoryProvider);
+    return new DetailsViewModel_Factory(navigatorProvider, dispatcherProvider, gitRepoRepositoryProvider);
   }
 
   public static DetailsViewModel newInstance(Navigator navigator,
-      CurrentRepoRepository gitRepoRepository) {
-    return new DetailsViewModel(navigator, gitRepoRepository);
+      DispatcherProvider dispatcherProvider, CurrentRepoRepository gitRepoRepository) {
+    return new DetailsViewModel(navigator, dispatcherProvider, gitRepoRepository);
   }
 }

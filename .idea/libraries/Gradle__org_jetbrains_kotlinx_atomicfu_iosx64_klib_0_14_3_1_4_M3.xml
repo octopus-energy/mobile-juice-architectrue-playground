@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: org.jetbrains.kotlinx:atomicfu-iosx64:klib:0.14.3-1.4-M3" type="kotlin.native">
+  <library name="Gradle: org.jetbrains.kotlinx:atomicfu-iosx64:klib:0.14.3-1.4-M3">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-iosx64/0.14.3-1.4-M3/177d614aedf825c17718e1966cf86e12e9d496dd/atomicfu.klib!/" />
     </CLASSES>

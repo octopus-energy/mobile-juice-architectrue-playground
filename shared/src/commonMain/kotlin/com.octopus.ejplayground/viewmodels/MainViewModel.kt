@@ -12,12 +12,21 @@ class MainViewModel @MakeInjectable constructor(
     private val navigator: Navigator,
     private val announcer: Announcer,
     private val dispatcherProvider: DispatcherProvider
-) : BaseViewModel<MainViewModel.ViewState>() {
+) : MotherViewModel<MainViewModel.ViewState, MainViewModel.UiAction>(
+    dispatcherProvider
+) {
 
     private val TEST_USER: String = "JakeWharton"
     override var lastViewState = ViewState()
 
-    fun loadResults() {
+    override fun onAction(action: UiAction) {
+        when (action) {
+            is UiAction.RepositoryClicked -> navigator.goToDetails(action.githubRepo)
+            is UiAction.LoadReposClicked -> loadResults()
+        }
+    }
+
+    private fun loadResults() {
         emit(lastViewState.copy(loadingIsVisible = true))
         coroutineScope.launch {
             try {
@@ -31,12 +40,13 @@ class MainViewModel @MakeInjectable constructor(
         }
     }
 
-    fun repoClicked(githubRepo: GithubRepo) {
-        navigator.goToDetails(githubRepo)
-    }
-
     data class ViewState(
             val loadingIsVisible: Boolean = false,
             val results: List<GithubRepo> = listOf()
-    ) : BaseViewState
+    ) : MotherViewModel.ViewState
+
+    sealed class UiAction : MotherViewModel.UiAction {
+        data class RepositoryClicked(val githubRepo: GithubRepo) : UiAction()
+        object LoadReposClicked : UiAction()
+    }
 }
