@@ -4,15 +4,29 @@ import shared
 struct ContentView: View {
     
     let navigatorHere: Navigator = NavigatorImpl()
-    lazy var viewModel = DetailsViewModel(navigator: navigatorHere)
+    let dispatcherProviderHere: DispatcherProvider = DispatcherProvider()
+    let currentRepoRepositoryHere: CurrentRepoRepository = CurrentRepoRepository()
+    lazy var viewModel = DetailsViewModel(
+        navigator: navigatorHere,
+        dispatcherProvider: dispatcherProviderHere,
+        gitRepoRepository: currentRepoRepositoryHere
+    )
+    
+    @State private var text: String = "Test"
     
     var body: some View {
-        Text("\(text())")
+        VStack {
+            Text(text)
+            Button("Update text") {
+                self.text = "Take 2"
+            }
+        }
     }
     
-    func text() -> String {
-        var mutatableSelf = self
-        return mutatableSelf.viewModel.lastViewState.toolbarTitle
+    init() {
+//        self.viewModel.viewStateStream().collect(collector: Kotlinx_coroutines_coreFlowCollector) { (KotlinUnit?, Error?)
+//            body.
+//        }
     }
 }
 
@@ -29,6 +43,10 @@ class NavigatorImpl: Navigator {
     }
     
     func goToUrl(url: String) {
+        // todo
+    }
+    
+    func goToMain() {
         // todo
     }
     
