@@ -12,21 +12,39 @@ struct ContentView: View {
         gitRepoRepository: currentRepoRepositoryHere
     )
     
-    @State private var text: String = "Test"
+    let closure : () -> Kotlinx_coroutines_coreFlowCollector = {
+        class Testie: Kotlinx_coroutines_coreFlowCollector {
+            func emit(value: Any?, completionHandler: @escaping (KotlinUnit?, Error?) -> Void) {
+                print(value.debugDescription)
+            }
+        }
+        print("Closure")
+        return Testie()
+    }
+    let completionHandler: (KotlinUnit?, Error?) -> Void = { (_, _) -> Void in
+        print("Complete")
+    }
+    
+    @State private var textToDisplay: String = "Test"
     
     var body: some View {
         VStack {
-            Text(text)
+            Text(textToDisplay).onAppear() {
+                print("Appeared")
+                self.textToDisplay = "mm scrumptious"
+                var mutatingSelf = self
+                mutatingSelf.viewModel.viewStateStream().collect(
+                    collector: mutatingSelf.closure(),
+                    completionHandler: self.completionHandler
+                )
+            }
             Button("Update text") {
-                self.text = "Take 2"
+                self.textToDisplay = "Take 2"
+                var mutatingSelf = self
+                mutatingSelf.viewModel.onAction(action: DetailsViewModel.UiActionChangeTitle())
+//                self.textToDisplay = mutatingSelf.viewModel.lastViewState.toolbarTitle
             }
         }
-    }
-    
-    init() {
-//        self.viewModel.viewStateStream().collect(collector: Kotlinx_coroutines_coreFlowCollector) { (KotlinUnit?, Error?)
-//            body.
-//        }
     }
 }
 
