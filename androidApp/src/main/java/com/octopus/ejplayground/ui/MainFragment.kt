@@ -54,13 +54,13 @@ class MainFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        mainViewModel.viewStateStream().onEach {
+        mainViewModel.setNewViewStateCallback() {
             if (it.loadingIsVisible) {
                 a_main_progress.visibility = View.VISIBLE
             } else {
                 a_main_progress.visibility = View.INVISIBLE
             }
             mainAdapter?.addAll(it.results)
-        }.launchIn(coroutineScope)
+        }
     }
 }

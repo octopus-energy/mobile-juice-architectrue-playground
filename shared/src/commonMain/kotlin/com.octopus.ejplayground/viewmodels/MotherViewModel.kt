@@ -2,6 +2,7 @@ package com.octopus.ejplayground.viewmodels
 
 import com.octopus.ejplayground.CallSuper
 import com.octopus.ejplayground.domain.DispatcherProvider
+import com.octopus.ejplayground.removeFirstIfItExists
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.Flow
@@ -12,11 +13,16 @@ abstract class MotherViewModel<T : MotherViewModel.ViewState, S : MotherViewMode
     private val dispatcherProvider: DispatcherProvider
 ) : LifecycleReceiver {
 
+    companion object {
+        private const val MAX_VIEW_STATE_BACKSTACK = 5
+    }
+
     interface ViewState
     interface UiAction
 
     abstract var lastViewState: T
-    private val viewStatePublisher = ConflatedBroadcastChannel<T>()
+    private val viewStateStack: MutableList<T> = mutableListOf()
+    var viewStateUpdatedCallback: ((T) -> Unit)? = null
     private var coreroutineSupervisor = SupervisorJob()
     protected var coroutineScope: CoroutineScope = CoroutineScope(dispatcherProvider.main + coreroutineSupervisor)
 
@@ -35,14 +41,23 @@ abstract class MotherViewModel<T : MotherViewModel.ViewState, S : MotherViewMode
 
     abstract fun onAction(action: S)
 
-    fun viewStateStream(): Flow<T> {
-        return viewStatePublisher.asFlow()
-            .flowOn(Dispatchers.Main)
-
+    protected fun emit(viewState: T) {
+        lastViewState = viewState
+        addToStack(viewState)
+        viewStateUpdatedCallback?.invoke(viewState)
     }
 
-    protected fun emit(viewState: T) {
-        viewStatePublisher.offer(viewState)
-        lastViewState = viewState
+    private fun addToStack(viewState: T) {
+        if (viewStateStack.count() >= MAX_VIEW_STATE_BACKSTACK) {
+            viewStateStack.removeFirstIfItExists()
+        }
+        viewStateStack.add(viewState)
+    }
+
+    fun setNewViewStateCallback(callback: ((T) -> Unit)?) {
+        viewStateUpdatedCallback = callback
+        viewStateStack.lastOrNull()?.let {
+            viewStateUpdatedCallback?.invoke(it)
+        }
     }
 }

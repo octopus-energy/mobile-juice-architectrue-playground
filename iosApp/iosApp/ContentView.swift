@@ -3,46 +3,27 @@ import shared
 
 struct ContentView: View {
     
-    let navigatorHere: Navigator = NavigatorImpl()
-    let dispatcherProviderHere: DispatcherProvider = DispatcherProvider()
-    let currentRepoRepositoryHere: CurrentRepoRepository = CurrentRepoRepository()
-    lazy var viewModel = DetailsViewModel(
-        navigator: navigatorHere,
-        dispatcherProvider: dispatcherProviderHere,
-        gitRepoRepository: currentRepoRepositoryHere
+    let viewModel = DetailsViewModel(
+        navigator: NavigatorImpl(),
+        dispatcherProvider: DispatcherProvider(),
+        gitRepoRepository: CurrentRepoRepository()
     )
-    
-    let closure : () -> Kotlinx_coroutines_coreFlowCollector = {
-        class Testie: Kotlinx_coroutines_coreFlowCollector {
-            func emit(value: Any?, completionHandler: @escaping (KotlinUnit?, Error?) -> Void) {
-                print(value.debugDescription)
-            }
-        }
-        print("Closure")
-        return Testie()
-    }
-    let completionHandler: (KotlinUnit?, Error?) -> Void = { (_, _) -> Void in
-        print("Complete")
-    }
-    
-    @State private var textToDisplay: String = "Test"
+
+    @State private var textToDisplay: String = "Inital text"
     
     var body: some View {
         VStack {
             Text(textToDisplay).onAppear() {
                 print("Appeared")
-                self.textToDisplay = "mm scrumptious"
-                var mutatingSelf = self
-                mutatingSelf.viewModel.viewStateStream().collect(
-                    collector: mutatingSelf.closure(),
-                    completionHandler: self.completionHandler
-                )
+                self.viewModel.setNewViewStateCallback(callback: { viewState -> Void in
+                    print(viewState)
+                    self.textToDisplay = viewState.toolbarTitle
+                    print("New State Received")
+                })
             }
             Button("Update text") {
-                self.textToDisplay = "Take 2"
-                var mutatingSelf = self
-                mutatingSelf.viewModel.onAction(action: DetailsViewModel.UiActionChangeTitle())
-//                self.textToDisplay = mutatingSelf.viewModel.lastViewState.toolbarTitle
+                self.textToDisplay = "Action triggered"
+                self.viewModel.onAction(action: DetailsViewModel.UiActionChangeTitle())
             }
         }
     }

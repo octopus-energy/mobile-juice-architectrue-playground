@@ -35,7 +35,7 @@ class DetailsViewModel @MakeInjectable constructor(
     override fun onAction(action: UiAction) {
         when (action) {
             UiAction.RepositoryClicked -> navigator.goToUrl(gitRepoRepository.githubRepo!!.url)
-            UiAction.ChangeTitle -> emit(lastViewState.copy(toolbarTitle = "Title changed"))
+            UiAction.ChangeTitle -> emit(lastViewState.copy(toolbarTitle = "changed title"))
         }
     }
 

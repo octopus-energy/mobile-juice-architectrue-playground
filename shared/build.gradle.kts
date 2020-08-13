@@ -18,6 +18,11 @@ kotlin {
                 baseName = "shared"
             }
         }
+        compilations {
+            val main by getting {
+                kotlinOptions.freeCompilerArgs = listOf("-Xobjc-generics")
+            }
+        }
     }
     sourceSets {
         val commonMain by getting {

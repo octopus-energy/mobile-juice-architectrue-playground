@@ -40,9 +40,9 @@ class DetailsFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        detailsViewModel.viewStateStream().onEach {
+        detailsViewModel.setNewViewStateCallback() {
             requireAppCompatActivity().supportActionBar?.title = it.toolbarTitle
             a_details_txt.text = it.urlAddress
-        }.launchIn(coroutineScope)
+        }
     }
 }
