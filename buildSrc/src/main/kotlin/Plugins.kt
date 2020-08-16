@@ -1,6 +1,6 @@
 internal object PluginVersion {
     val gradle = "4.0.0"
-    val kotlin = "1.4-M3"
+    val kotlin = "1.4.0"
     val googleServices = "4.3.3"
     val crashlytics = "2.0.0"
     val firebasePerformance = "1.3.1"
