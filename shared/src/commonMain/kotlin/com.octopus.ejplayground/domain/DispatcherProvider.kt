@@ -8,8 +8,8 @@ class DispatcherProvider @MakeInjectable constructor()  {
 
     val main: CoroutineDispatcher = Dispatchers.Main
 
-    val background: CoroutineDispatcher = Dispatchers.IO
+    val background: CoroutineDispatcher = Dispatchers.Background
 
 }
 
-expect val Dispatchers.IO: CoroutineDispatcher
+expect val Dispatchers.Background: CoroutineDispatcher

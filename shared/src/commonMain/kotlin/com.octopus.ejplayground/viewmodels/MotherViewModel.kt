@@ -8,6 +8,8 @@ import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flowOn
+import kotlin.native.concurrent.SharedImmutable
+import kotlin.native.concurrent.ThreadLocal
 
 abstract class MotherViewModel<T : MotherViewModel.ViewState, S : MotherViewModel.UiAction>(
     private val dispatcherProvider: DispatcherProvider

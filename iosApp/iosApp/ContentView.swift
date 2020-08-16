@@ -21,9 +21,9 @@ struct ContentView: View {
                     print("New State Received")
                 })
             }
-            Button("Update text") {
+            Button("Launch async") {
                 self.textToDisplay = "Action triggered"
-                self.viewModel.onAction(action: DetailsViewModel.UiActionChangeTitle())
+                self.viewModel.onAction(action: DetailsViewModel.UiActionLaunchAsync())
             }
         }
     }
