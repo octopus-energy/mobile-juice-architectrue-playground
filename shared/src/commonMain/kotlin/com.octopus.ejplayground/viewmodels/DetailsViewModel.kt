@@ -18,8 +18,6 @@ class DetailsViewModel @MakeInjectable constructor(
     dispatcherProvider
 ) {
 
-    override var lastViewState: ViewState = ViewState()
-
     override fun onAttach() {
         super.onAttach()
         val githubRepo = gitRepoRepository.githubRepo
@@ -39,6 +37,10 @@ class DetailsViewModel @MakeInjectable constructor(
         when (action) {
             UiAction.RepositoryClicked -> navigator.goToUrl(gitRepoRepository.githubRepo!!.url)
         }
+    }
+
+    override fun defaultViewState(): ViewState {
+        return ViewState()
     }
 
     data class ViewState(

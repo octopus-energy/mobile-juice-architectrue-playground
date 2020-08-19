@@ -1,16 +1,16 @@
 import SwiftUI
 import shared
-import Swinject
 
 struct ContentView: View {
     
 //    let mainViewModel = MainViewModel(
-//        githubRepoManager: GithubRepoManager(githubService: GithubServiceImpl(githubRepoMapper: GithubRepoMapper())),
+ //       githubRepoManager: GithubRepoManager(githubService: GithubServiceImpl(githubRepoMapper: GithubRepoMapper())),
 //        navigator: NavigatorImpl(),
-//        announcer: AnnouncerImpl(),
-//        dispatcherProvider: DispatcherProvider()
-//    )
-    
+  //      announcer: AnnouncerImpl(),
+ //       dispatcherProvider: DispatcherProvider(),
+  //      logger: LoggerImpl()
+ //   )
+
     var mainViewModel: MainViewModel!
 
     @State private var textToDisplay: String = "Inital text"
@@ -19,11 +19,10 @@ struct ContentView: View {
         VStack {
             Text(textToDisplay).onAppear() {
                 print("Appeared")
-                self.mainViewModel.setNewViewStateCallback(callback: { viewState -> Void in
+                self.mainViewModel.nativeViewStateStream().watch() { state in
                     print("New State Received")
-                    print(viewState)
-                    self.textToDisplay = viewState.loadingIsVisible.description
-                })
+                    print(state.debugDescription)
+                }
             }
             Button("Launch async") {
                 self.textToDisplay = "Action triggered"
@@ -63,17 +62,17 @@ class AnnouncerImpl: Announcer {
 
 
 class MainContainer {
-    
+
     static let sharedContainer = MainContainer()
-    
+
     let container = Container()
-    
+
     private init() {
         setupDefaultContainers()
     }
-    
+
     private func setupDefaultContainers() {
-        
+
         container.register(GithubRepoMapper.self) { _ in GithubRepoMapper() }
         container.register(GithubService.self) { resolver in
             return GithubServiceImpl(githubRepoMapper: resolver.resolve(GithubRepoMapper.self)!)
@@ -81,11 +80,11 @@ class MainContainer {
         container.register(GithubRepoManager.self) { resolver in
             return GithubRepoManager(githubService: resolver.resolve(GithubService.self)!)
         }
-        
+
         container.register(Navigator.self) { _ in NavigatorImpl() }
         container.register(Announcer.self) { _ in AnnouncerImpl() }
         container.register(DispatcherProvider.self) { _ in DispatcherProvider() }
-        
+
         container.register(MainViewModel.self) { resolver in
             let repoManager = resolver.resolve(GithubRepoManager.self)!
             let navigator = resolver.resolve(Navigator.self)!
@@ -93,5 +92,11 @@ class MainContainer {
             let dispatchProvider = resolver.resolve(DispatcherProvider.self)!
             return MainViewModel(githubRepoManager: repoManager, navigator: navigator, announcer: announcer, dispatcherProvider: dispatchProvider)
         }
+    }
+}
+
+class LoggerImpl: Logger {
+    func log(message: String) {
+        NSLog(message)
     }
 }

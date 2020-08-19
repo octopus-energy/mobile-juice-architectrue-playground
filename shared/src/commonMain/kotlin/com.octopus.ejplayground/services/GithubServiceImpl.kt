@@ -6,6 +6,7 @@ import com.octopus.ejplayground.domain.GithubService
 import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.request.*
+import kotlinx.coroutines.delay
 
 class GithubServiceImpl @MakeInjectable constructor(
     private val githubRepoMapper: GithubRepoMapper
@@ -18,7 +19,9 @@ class GithubServiceImpl @MakeInjectable constructor(
     }
 
     override suspend fun fetchCodeRepos(username: String): List<GithubRepo> {
-        val content: List<GithubRepoEntity> = client.get("$GITHUB_BASE_URL/users/$username/repos")
-        return githubRepoMapper.map(content)
+        delay(200)
+        return listOf(GithubRepo(1, "Name", "url"))
+//        val content: List<GithubRepoEntity> = client.get("$GITHUB_BASE_URL/users/$username/repos")
+//        return githubRepoMapper.map(content)
     }
 }
