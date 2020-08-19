@@ -3,6 +3,7 @@ package com.octopus.ejplayground.viewmodels
 import com.octopus.ejplayground.MakeInjectable
 import com.octopus.ejplayground.SingleActivity
 import com.octopus.ejplayground.domain.*
+import com.octopus.ejplayground.ensureNeverFrozeny
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -16,6 +17,10 @@ class MainViewModel @MakeInjectable constructor(
     dispatcherProvider
 ) {
 
+    init {
+        ensureNeverFrozeny()
+    }
+
     private val TEST_USER: String = "JakeWharton"
     override var lastViewState = ViewState()
 
@@ -27,14 +32,14 @@ class MainViewModel @MakeInjectable constructor(
     }
 
     private fun loadResults() {
-        emit(lastViewState.copy(loadingIsVisible = true))
+//        emit(lastViewState.copy(loadingIsVisible = true))
         coroutineScope.launch {
             try {
                 val result = withContext(dispatcherProvider.background) { githubRepoManager.fetchSortedRepos(TEST_USER) }
-                emit(lastViewState.copy(loadingIsVisible = false))
-                emit(lastViewState.copy(results = result))
+//                emit(lastViewState.copy(loadingIsVisible = false))
+//                emit(lastViewState.copy(results = result))
             } catch (e: Exception) {
-                emit(lastViewState.copy(loadingIsVisible = false))
+//                emit(lastViewState.copy(loadingIsVisible = false))
                 announcer.announce(e.toString())
             }
         }
