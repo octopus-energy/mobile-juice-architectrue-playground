@@ -19,9 +19,7 @@ class GithubServiceImpl @MakeInjectable constructor(
     }
 
     override suspend fun fetchCodeRepos(username: String): List<GithubRepo> {
-        delay(200)
-        return listOf(GithubRepo(1, "Name", "url"))
-//        val content: List<GithubRepoEntity> = client.get("$GITHUB_BASE_URL/users/$username/repos")
-//        return githubRepoMapper.map(content)
+        val content: List<GithubRepoEntity> = client.get("$GITHUB_BASE_URL/users/$username/repos")
+        return githubRepoMapper.map(content)
     }
 }
