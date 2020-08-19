@@ -7,8 +7,8 @@ buildscript {
         maven { url = uri("https://kotlin.bintray.com/kotlinx") }
     }
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4-M3")
-        classpath("com.android.tools.build:gradle:4.0.1")
+        classpath(Plugin.kotlin)
+        classpath(Plugin.gradle)
         classpath(Plugin.navigationArgs)
     }
 }

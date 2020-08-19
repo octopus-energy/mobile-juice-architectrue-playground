@@ -1,11 +1,11 @@
 internal object KmpLibraryVersion {
-    val serialisation = "0.20.0-1.4-M3"
+    val serialisation = "1.0.0-RC"
     val coroutines = "1.3.9-native-mt"
-    val ktor = "1.3.2-1.4-M3" // updating to the 1.4.0-rc version causes a build error (backend internal error facade.
+    val ktor = "1.4.0" // updating to the 1.4.0-rc version causes a build error (backend internal error facade.
 }
 
 object KmpLibrary {
-    val serialisation = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${KmpLibraryVersion.serialisation}"
+    val serialisation = "org.jetbrains.kotlinx:kotlinx-serialization-core:${KmpLibraryVersion.serialisation}"
     val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${KmpLibraryVersion.coroutines}"
     val ktor = "io.ktor:ktor-client-core:${KmpLibraryVersion.ktor}"
     val ktorJson = "io.ktor:ktor-client-json:${KmpLibraryVersion.ktor}"

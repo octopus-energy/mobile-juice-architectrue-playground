@@ -56,7 +56,6 @@ class NavigatorImpl: Navigator {
 
 class AnnouncerImpl: Announcer {
     func announce(text: String) {
-        print("announcement: " + text)
     }
 }
 

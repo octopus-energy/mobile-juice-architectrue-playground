@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.4-M3"
+    kotlin("plugin.serialization") version "1.4.0"
     id("com.android.library")
     id("kotlin-android-extensions")
 }
@@ -67,6 +67,7 @@ kotlin {
                 freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
                 freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
                 freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.time.ExperimentalTime"
+                freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.serialization.UnstableDefault"
             }
         }
     }
