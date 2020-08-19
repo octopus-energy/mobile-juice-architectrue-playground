@@ -6,7 +6,7 @@ import kotlinx.coroutines.Dispatchers
 
 class DispatcherProvider @MakeInjectable constructor()  {
 
-    val main: CoroutineDispatcher = Dispatchers.Main
+    val main: CoroutineDispatcher = Dispatchers.Unconfined
 
     val background: CoroutineDispatcher = Dispatchers.Background
 

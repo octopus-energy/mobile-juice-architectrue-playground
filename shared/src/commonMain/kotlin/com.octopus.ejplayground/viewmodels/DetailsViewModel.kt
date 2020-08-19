@@ -38,16 +38,6 @@ class DetailsViewModel @MakeInjectable constructor(
     override fun onAction(action: UiAction) {
         when (action) {
             UiAction.RepositoryClicked -> navigator.goToUrl(gitRepoRepository.githubRepo!!.url)
-            UiAction.ChangeTitle -> emit(lastViewState.copy(toolbarTitle = "changed title"))
-            UiAction.LaunchAsync -> coroutineScope.launch {
-                emit(lastViewState.copy(toolbarTitle = "changed title in coroutine main"))
-                emit(lastViewState.copy(toolbarTitle = "(Coroutine) is on thread $currentThreadName"))
-                val result = withContext(dispatcherProvider.background) {
-                    delay(2000)
-                    "result fetched from $currentThreadName"
-                }
-                emit(lastViewState.copy(toolbarTitle = result))
-            }
         }
     }
 
@@ -58,7 +48,5 @@ class DetailsViewModel @MakeInjectable constructor(
 
     sealed class UiAction : MotherViewModel.UiAction {
         object RepositoryClicked : UiAction()
-        object ChangeTitle : UiAction()
-        object LaunchAsync : UiAction()
     }
 }

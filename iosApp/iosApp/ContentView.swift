@@ -3,10 +3,11 @@ import shared
 
 struct ContentView: View {
     
-    let viewModel = DetailsViewModel(
+    let mainViewModel = MainViewModel(
+        githubRepoManager: GithubRepoManager(githubService: GithubServiceImpl(githubRepoMapper: GithubRepoMapper())),
         navigator: NavigatorImpl(),
-        dispatcherProvider: DispatcherProvider(),
-        gitRepoRepository: CurrentRepoRepository()
+        announcer: AnnouncerImpl(),
+        dispatcherProvider: DispatcherProvider()
     )
 
     @State private var textToDisplay: String = "Inital text"
@@ -15,15 +16,15 @@ struct ContentView: View {
         VStack {
             Text(textToDisplay).onAppear() {
                 print("Appeared")
-                self.viewModel.setNewViewStateCallback(callback: { viewState -> Void in
-                    print(viewState)
-                    self.textToDisplay = viewState.toolbarTitle
+                self.mainViewModel.setNewViewStateCallback(callback: { viewState -> Void in
                     print("New State Received")
+                    print(viewState)
+                    self.textToDisplay = viewState.loadingIsVisible.description
                 })
             }
             Button("Launch async") {
                 self.textToDisplay = "Action triggered"
-                self.viewModel.onAction(action: DetailsViewModel.UiActionLaunchAsync())
+                self.mainViewModel.onAction(action: MainViewModel.UiActionLoadReposClicked())
             }
         }
     }
@@ -49,4 +50,10 @@ class NavigatorImpl: Navigator {
         // todo
     }
     
+}
+
+class AnnouncerImpl: Announcer {
+    func announce(text: String) {
+        print("announcement: " + text)
+    }
 }
