@@ -48,3 +48,11 @@ cd ..
 ./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}
 ```
 - Move the script to run directly after Dependencies
+
+**Add Kotlin Xcode plugin**
+- This basicaly helps debugging and reading .kt files within Xcode
+- Go to https://github.com/touchlab/xcode-kotlin and download and unzip file. 
+- Open up terminal and set your location to the unzipped folder 
+- Type the following command in the terminal and press enter:  ./setup.sh
+- Do the same for this command: sudo ./colorsetup.sh
+- When prompted with a warning from Xcode, click to 'load bundle' 

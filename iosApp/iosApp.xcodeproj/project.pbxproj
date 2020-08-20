@@ -18,8 +18,6 @@
 		7555FF8B242A565B00829871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7555FF89242A565B00829871 /* LaunchScreen.storyboard */; };
 		7555FF96242A565B00829871 /* iosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF95242A565B00829871 /* iosAppTests.swift */; };
 		7555FFA1242A565B00829871 /* iosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FFA0242A565B00829871 /* iosAppUITests.swift */; };
-		B400FDBB24EE894F00FADDB7 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3370D9C424ED4BED00FBDEBE /* Swinject.framework */; };
-		B400FDBC24EE894F00FADDB7 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3370D9C424ED4BED00FBDEBE /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4C121DC249CDD1B00D8A21A /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C121DB249CDD1B00D8A21A /* shared.framework */; };
 		B4C121DD249CDD1B00D8A21A /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4C121DB249CDD1B00D8A21A /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -105,12 +103,12 @@
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
-				334140B624ED3277003988E7 /* shared */,
 				7555FF7D242A565900829871 /* iosApp */,
 				7555FF94242A565B00829871 /* iosAppTests */,
 				7555FF9F242A565B00829871 /* iosAppUITests */,
 				7555FF7C242A565900829871 /* Products */,
 				7555FFB0242A642200829871 /* Frameworks */,
+				334140B624ED3277003988E7 /* shared */,
 			);
 			sourceTree = "<group>";
 		};
