@@ -1,5 +1,6 @@
 import SwiftUI
 import shared
+import Swinject
 
 struct ContentView: View {
     
@@ -82,6 +83,7 @@ class MainContainer {
 
         container.register(Navigator.self) { _ in NavigatorImpl() }
         container.register(Announcer.self) { _ in AnnouncerImpl() }
+        container.register(Logger.self) { _ in LoggerImpl() }
         container.register(DispatcherProvider.self) { _ in DispatcherProvider() }
 
         container.register(MainViewModel.self) { resolver in
@@ -89,7 +91,8 @@ class MainContainer {
             let navigator = resolver.resolve(Navigator.self)!
             let announcer = resolver.resolve(Announcer.self)!
             let dispatchProvider = resolver.resolve(DispatcherProvider.self)!
-            return MainViewModel(githubRepoManager: repoManager, navigator: navigator, announcer: announcer, dispatcherProvider: dispatchProvider)
+            let logger = resolver.resolve(Logger.self)!
+            return MainViewModel(githubRepoManager: repoManager, navigator: navigator, announcer: announcer, dispatcherProvider: dispatchProvider, logger: logger)
         }
     }
 }
