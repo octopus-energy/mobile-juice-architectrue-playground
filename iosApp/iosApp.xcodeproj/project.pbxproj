@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		334140B724ED3277003988E7 /* shared in Resources */ = {isa = PBXBuildFile; fileRef = 334140B624ED3277003988E7 /* shared */; };
-		3370D9C524ED4BED00FBDEBE /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3370D9C424ED4BED00FBDEBE /* Swinject.framework */; };
-		3370D9C624ED4BED00FBDEBE /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3370D9C424ED4BED00FBDEBE /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7555FF7F242A565900829871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF7E242A565900829871 /* AppDelegate.swift */; };
 		7555FF81242A565900829871 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF80242A565900829871 /* SceneDelegate.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
@@ -18,6 +16,8 @@
 		7555FF8B242A565B00829871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7555FF89242A565B00829871 /* LaunchScreen.storyboard */; };
 		7555FF96242A565B00829871 /* iosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF95242A565B00829871 /* iosAppTests.swift */; };
 		7555FFA1242A565B00829871 /* iosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FFA0242A565B00829871 /* iosAppUITests.swift */; };
+		B400FDBB24EE894F00FADDB7 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3370D9C424ED4BED00FBDEBE /* Swinject.framework */; };
+		B400FDBC24EE894F00FADDB7 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3370D9C424ED4BED00FBDEBE /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4C121DC249CDD1B00D8A21A /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C121DB249CDD1B00D8A21A /* shared.framework */; };
 		B4C121DD249CDD1B00D8A21A /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4C121DB249CDD1B00D8A21A /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B4C121DD249CDD1B00D8A21A /* shared.framework in Embed Frameworks */,
-				3370D9C624ED4BED00FBDEBE /* Swinject.framework in Embed Frameworks */,
+				B400FDBC24EE894F00FADDB7 /* Swinject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C121DC249CDD1B00D8A21A /* shared.framework in Frameworks */,
-				3370D9C524ED4BED00FBDEBE /* Swinject.framework in Frameworks */,
+				B400FDBB24EE894F00FADDB7 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

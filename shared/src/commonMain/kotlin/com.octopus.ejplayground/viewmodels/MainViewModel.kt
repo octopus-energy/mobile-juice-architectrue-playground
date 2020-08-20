@@ -3,21 +3,21 @@ package com.octopus.ejplayground.viewmodels
 import com.octopus.ejplayground.MakeInjectable
 import com.octopus.ejplayground.SingleActivity
 import com.octopus.ejplayground.domain.*
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.octopus.ejplayground.ensureNeverFrozeny
+import kotlinx.coroutines.*
 
 @SingleActivity
 class MainViewModel @MakeInjectable constructor(
     private val githubRepoManager: GithubRepoManager,
     private val navigator: Navigator,
     private val announcer: Announcer,
-    private val dispatcherProvider: DispatcherProvider
+    private val dispatcherProvider: DispatcherProvider,
+    private val logger: Logger,
 ) : MotherViewModel<MainViewModel.ViewState, MainViewModel.UiAction>(
     dispatcherProvider
 ) {
 
     private val TEST_USER: String = "JakeWharton"
-    override var lastViewState = ViewState()
 
     override fun onAction(action: UiAction) {
         when (action) {
@@ -30,19 +30,25 @@ class MainViewModel @MakeInjectable constructor(
         emit(lastViewState.copy(loadingIsVisible = true))
         coroutineScope.launch {
             try {
-                val result = withContext(dispatcherProvider.background) { githubRepoManager.fetchSortedRepos(TEST_USER) }
-                emit(lastViewState.copy(loadingIsVisible = false))
-                emit(lastViewState.copy(results = result))
+                val result = withContext(dispatcherProvider.main) {
+                    githubRepoManager.fetchSortedRepos(TEST_USER)
+                }
+                emit(lastViewState.copy(loadingIsVisible = false, results = result))
             } catch (e: Exception) {
+                logger.log("Exception = $e")
                 emit(lastViewState.copy(loadingIsVisible = false))
                 announcer.announce(e.toString())
             }
         }
     }
 
+    override fun defaultViewState(): ViewState {
+        return ViewState()
+    }
+
     data class ViewState(
-            val loadingIsVisible: Boolean = false,
-            val results: List<GithubRepo> = listOf()
+        val loadingIsVisible: Boolean = false,
+        val results: List<GithubRepo> = listOf()
     ) : MotherViewModel.ViewState
 
     sealed class UiAction : MotherViewModel.UiAction {

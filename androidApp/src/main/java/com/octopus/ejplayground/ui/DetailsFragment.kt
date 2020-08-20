@@ -16,23 +16,24 @@ import javax.inject.Inject
 
 class DetailsFragment : BaseFragment() {
 
-    @Inject lateinit var detailsViewModel: DetailsViewModel
+    @Inject
+    lateinit var detailsViewModel: DetailsViewModel
 
     override fun getLifecycleReceivers(): List<LifecycleReceiver> {
         return listOf(detailsViewModel)
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
     override fun onViewCreated(
-            view: View,
-            savedInstanceState: Bundle?
+        view: View,
+        savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
         a_details_btn.setOnClickListener { detailsViewModel.onAction(DetailsViewModel.UiAction.RepositoryClicked) }
@@ -40,9 +41,10 @@ class DetailsFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        detailsViewModel.setNewViewStateCallback() {
-            requireAppCompatActivity().supportActionBar?.title = it.toolbarTitle
-            a_details_txt.text = it.urlAddress
-        }
+        detailsViewModel.viewStateStream()
+            .onEach {
+                requireAppCompatActivity().supportActionBar?.title = it.toolbarTitle
+                a_details_txt.text = it.urlAddress
+            }.launchIn(coroutineScope)
     }
 }

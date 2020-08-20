@@ -6,6 +6,7 @@ import com.octopus.ejplayground.domain.GithubService
 import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.request.*
+import kotlinx.coroutines.delay
 
 class GithubServiceImpl @MakeInjectable constructor(
     private val githubRepoMapper: GithubRepoMapper

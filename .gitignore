@@ -1,9 +1,13 @@
+# Android & KMP
 /.idea
 **/build
 .DS_Store
 /local.properties
 /captures
 .gradle/
+
+# Ios
+xcuserdata/
 
 # CHEAT SHEET
 # **/directory - all directories of that name in the project

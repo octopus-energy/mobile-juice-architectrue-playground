@@ -1,12 +1,15 @@
 package com.octopus.ejplayground.viewmodels
 
+import com.octopus.ejplayground.CFlow
 import com.octopus.ejplayground.CallSuper
 import com.octopus.ejplayground.domain.DispatcherProvider
 import com.octopus.ejplayground.removeFirstIfItExists
+import com.octopus.ejplayground.wrap
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flowOn
 import kotlin.native.concurrent.SharedImmutable
 import kotlin.native.concurrent.ThreadLocal
@@ -15,18 +18,16 @@ abstract class MotherViewModel<T : MotherViewModel.ViewState, S : MotherViewMode
     private val dispatcherProvider: DispatcherProvider
 ) : LifecycleReceiver {
 
-    companion object {
-        private const val MAX_VIEW_STATE_BACKSTACK = 5
-    }
-
     interface ViewState
     interface UiAction
 
-    abstract var lastViewState: T
-    private val viewStateStack: MutableList<T> = mutableListOf()
-    var viewStateUpdatedCallback: ((T) -> Unit)? = null
+    private var viewStatePublisher: ConflatedBroadcastChannel<T> = ConflatedBroadcastChannel()
+    protected val lastViewState: T
+        get() = viewStatePublisher.valueOrNull ?: defaultViewState()
     private var coreroutineSupervisor = SupervisorJob()
     protected var coroutineScope: CoroutineScope = CoroutineScope(dispatcherProvider.main + coreroutineSupervisor)
+
+    abstract fun defaultViewState(): T
 
     @CallSuper
     override fun onAttach() {
@@ -44,22 +45,26 @@ abstract class MotherViewModel<T : MotherViewModel.ViewState, S : MotherViewMode
     abstract fun onAction(action: S)
 
     protected fun emit(viewState: T) {
-        lastViewState = viewState
-        addToStack(viewState)
-        viewStateUpdatedCallback?.invoke(viewState)
+        viewStatePublisher.offer(viewState)
     }
 
-    private fun addToStack(viewState: T) {
-        if (viewStateStack.count() >= MAX_VIEW_STATE_BACKSTACK) {
-            viewStateStack.removeFirstIfItExists()
-        }
-        viewStateStack.add(viewState)
+    /**
+     * Can't get standard flow collecting values in native code.
+     * Can collect the first value but nothing subsequent.
+     * Also don't know how to close a flow from native.
+     *
+     * Using a separate function as no doubt this functionality will be added to the coroutine library in the near future
+     * this makes it easier to change
+     *
+     * CFlow uses a few wrappers to handle this process in common code.
+     */
+    fun nativeViewStateStream(): CFlow<T> {
+        return viewStateStream().wrap()
     }
 
-    fun setNewViewStateCallback(callback: ((T) -> Unit)?) {
-        viewStateUpdatedCallback = callback
-        viewStateStack.lastOrNull()?.let {
-            viewStateUpdatedCallback?.invoke(it)
-        }
+    fun viewStateStream(): Flow<T> {
+        return viewStatePublisher.asFlow()
+            .filter { it != null } // Was getting null values down stream. No idea why as should never be able to happer
+            .flowOn(dispatcherProvider.main)
     }
 }

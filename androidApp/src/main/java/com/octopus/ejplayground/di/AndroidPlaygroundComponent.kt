@@ -11,7 +11,8 @@ import dagger.android.support.AndroidSupportInjectionModule
         AndroidInjectionModule::class,
         AndroidSupportInjectionModule::class,
         SingleActivityModule::class,
-        ServicesModule::class
+        ServicesModule::class,
+        PlatformModule::class
     ]
 )
 interface AndroidPlaygroundComponent : AndroidInjector<App> {
