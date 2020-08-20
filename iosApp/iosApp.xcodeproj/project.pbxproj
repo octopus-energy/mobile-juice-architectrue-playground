@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		334140B724ED3277003988E7 /* shared in Resources */ = {isa = PBXBuildFile; fileRef = 334140B624ED3277003988E7 /* shared */; };
+		3370DA2D24EEBE0700FBDEBE /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 3370DA2C24EEBE0700FBDEBE /* Resolver */; };
+		3370DA3024EEBF7500FBDEBE /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3370DA2F24EEBF7500FBDEBE /* Swinject */; };
 		7555FF7F242A565900829871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF7E242A565900829871 /* AppDelegate.swift */; };
 		7555FF81242A565900829871 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF80242A565900829871 /* SceneDelegate.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
@@ -47,7 +49,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B4C121DD249CDD1B00D8A21A /* shared.framework in Embed Frameworks */,
-				B400FDBC24EE894F00FADDB7 /* Swinject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		334140B624ED3277003988E7 /* shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shared; path = ../shared; sourceTree = "<group>"; };
-		3370D9C424ED4BED00FBDEBE /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7E242A565900829871 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7555FF80242A565900829871 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3370DA2D24EEBE0700FBDEBE /* Resolver in Frameworks */,
 				B4C121DC249CDD1B00D8A21A /* shared.framework in Frameworks */,
-				B400FDBB24EE894F00FADDB7 /* Swinject.framework in Frameworks */,
+				3370DA3024EEBF7500FBDEBE /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +167,6 @@
 		7555FFB0242A642200829871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3370D9C424ED4BED00FBDEBE /* Swinject.framework */,
 				B4C121DB249CDD1B00D8A21A /* shared.framework */,
 			);
 			name = Frameworks;
@@ -190,6 +190,10 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				3370DA2C24EEBE0700FBDEBE /* Resolver */,
+				3370DA2F24EEBF7500FBDEBE /* Swinject */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +266,10 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				3370DA2B24EEBE0700FBDEBE /* XCRemoteSwiftPackageReference "Resolver" */,
+				3370DA2E24EEBF7500FBDEBE /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -657,6 +665,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3370DA2B24EEBE0700FBDEBE /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
+		3370DA2E24EEBF7500FBDEBE /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3370DA2C24EEBE0700FBDEBE /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3370DA2B24EEBE0700FBDEBE /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		3370DA2F24EEBF7500FBDEBE /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3370DA2E24EEBF7500FBDEBE /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

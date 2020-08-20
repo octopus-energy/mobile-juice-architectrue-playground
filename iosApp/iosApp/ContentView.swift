@@ -4,14 +4,6 @@ import Swinject
 
 struct ContentView: View {
     
-//    let mainViewModel = MainViewModel(
- //       githubRepoManager: GithubRepoManager(githubService: GithubServiceImpl(githubRepoMapper: GithubRepoMapper())),
-//        navigator: NavigatorImpl(),
-  //      announcer: AnnouncerImpl(),
- //       dispatcherProvider: DispatcherProvider(),
-  //      logger: LoggerImpl()
- //   )
-
     var mainViewModel: MainViewModel!
 
     @State private var textToDisplay: String = "Inital text"
