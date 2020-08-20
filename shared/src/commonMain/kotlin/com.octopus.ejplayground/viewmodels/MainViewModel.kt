@@ -30,7 +30,7 @@ class MainViewModel @MakeInjectable constructor(
         emit(lastViewState.copy(loadingIsVisible = true))
         coroutineScope.launch {
             try {
-                val result = withContext(dispatcherProvider.background) {
+                val result = withContext(dispatcherProvider.main) {
                     githubRepoManager.fetchSortedRepos(TEST_USER)
                 }
                 emit(lastViewState.copy(loadingIsVisible = false, results = result))
