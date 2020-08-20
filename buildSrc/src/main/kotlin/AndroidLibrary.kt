@@ -7,19 +7,8 @@ internal object AndroidLibraryVersion {
     val navigation = "2.2.1"
     val lifecycleExtensions = "2.2.0"
     val dagger = "2.26"
-    val curry = "0.1.5"
-    val bindingCollectionAdapter = "3.1.1"
-    val wasabeef = "3.0.0"
-    val lottie = "3.3.0"
-    val firebaseAnalytics = "17.2.1"
-    val firebaseRemoteConfig = "19.1.2"
-    val firebaseCrashlytics = "17.0.0"
-    val firebasePerformance = "19.0.7"
     val coreKotlinExt = "1.2.0"
     val annotation = "1.1.0"
-    val leakCanary = "2.3"
-    val glide = "4.11.0"
-    val jUnit = "4.12"
 }
 
 object AndroidLibrary {
@@ -39,14 +28,8 @@ object AndroidLibrary {
     val navigation = "androidx.navigation:navigation-fragment-ktx:${AndroidLibraryVersion.navigation}"
     val navigationUi = "androidx.navigation:navigation-ui-ktx:${AndroidLibraryVersion.navigation}"
 
-    val firebaseRemoteConfig = "com.google.firebase:firebase-config-ktx:${AndroidLibraryVersion.firebaseRemoteConfig}"
-    val firebaseAnalytics = "com.google.firebase:firebase-analytics:${AndroidLibraryVersion.firebaseAnalytics}"
-    val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics:${AndroidLibraryVersion.firebaseCrashlytics}"
-    val firebasePerformance = "com.google.firebase:firebase-perf:${AndroidLibraryVersion.firebasePerformance}"
-
     val coroutinesCore = KmpLibrary.coroutinesCore
     val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${KmpLibraryVersion.coroutines}"
-    val coroutinesRx2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${KmpLibraryVersion.coroutines}"
 
     val dagger = "com.google.dagger:dagger:${AndroidLibraryVersion.dagger}"
     val daggerAndroid = "com.google.dagger:dagger-android:${AndroidLibraryVersion.dagger}"
@@ -55,19 +38,5 @@ object AndroidLibrary {
     val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:${AndroidLibraryVersion.dagger}"
 
     val ktorOkHttpEngine = "io.ktor:ktor-client-okhttp:${KmpLibraryVersion.ktor}"
-
-    val currencyConverter = "com.github.roadmaptravel:Curry:${AndroidLibraryVersion.curry}"
-    val recyclerAnimators = "jp.wasabeef:recyclerview-animators:${AndroidLibraryVersion.wasabeef}"
-    val bindingCollectionAdapter =
-            "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:${AndroidLibraryVersion.bindingCollectionAdapter}"
-    val bindngCollectionAdapterRecyclerView =
-            "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:${AndroidLibraryVersion.bindingCollectionAdapter}"
-    val lottie = "com.airbnb.android:lottie:${AndroidLibraryVersion.lottie}"
-    val glide = "com.github.bumptech.glide:glide:${AndroidLibraryVersion.glide}"
-    val glideCompiler = "com.github.bumptech.glide:compiler:${AndroidLibraryVersion.glide}"
-
-    val leakCanary = "com.squareup.leakcanary:leakcanary-android:${AndroidLibraryVersion.leakCanary}"
-
-    val jUnit = "junit:junit:${AndroidLibraryVersion.jUnit}"
 }
 
