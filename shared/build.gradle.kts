@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.4.0"
+    kotlin("plugin.serialization")
     id("com.android.library")
     id("kotlin-android-extensions")
 }

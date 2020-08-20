@@ -10,6 +10,7 @@ internal object PluginVersion {
 object Plugin {
     val gradle = "com.android.tools.build:gradle:${PluginVersion.gradle}"
     val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${PluginVersion.kotlin}"
+    val serialization = "org.jetbrains.kotlin:kotlin-serialization:${PluginVersion.kotlin}"
     val googleServices = "com.google.gms:google-services:${PluginVersion.googleServices}"
     val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:${PluginVersion.crashlytics}"
     val firebasePerformance = "com.google.firebase:perf-plugin:${PluginVersion.firebasePerformance}"

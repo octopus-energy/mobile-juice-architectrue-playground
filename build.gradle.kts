@@ -8,6 +8,7 @@ buildscript {
     }
     dependencies {
         classpath(Plugin.kotlin)
+        classpath(Plugin.serialization)
         classpath(Plugin.gradle)
         classpath(Plugin.navigationArgs)
     }
