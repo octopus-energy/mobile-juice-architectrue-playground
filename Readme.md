@@ -21,6 +21,8 @@ In order to maximise code reuse the app uses clean architecture and separates th
 #### Running Android
 Should run as is. Just click build.
 
+Add the TabNine plugin to have basic code completion in swift code within android studio. 
+
 #### Running iOS
 A little more setup to do here
 

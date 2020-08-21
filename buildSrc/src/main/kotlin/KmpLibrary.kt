@@ -1,7 +1,7 @@
 internal object KmpLibraryVersion {
     val serialisation = "1.0.0-RC"
     val coroutines = "1.3.9-native-mt"
-    val ktor = "1.4.0" // updating to the 1.4.0-rc version causes a build error (backend internal error facade.
+    val ktor = "1.4.0"
 }
 
 object KmpLibrary {
