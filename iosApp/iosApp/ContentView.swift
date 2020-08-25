@@ -1,33 +1,63 @@
 import SwiftUI
 import shared
-import Swinject
 
 struct ContentView: View {
     
     var mainViewModel: MainViewModel!
-
+    
     @State private var textToDisplay: String = "Inital text"
+    @State private var repos = [GithubRepo]()
+    @State var isLoading = false {
+        didSet {
+            print("isLoading is \(self.isLoading)")
+        }
+    }
     
     var body: some View {
-        VStack {
-            Text(textToDisplay).onAppear() {
-                print("Appeared")
-                self.mainViewModel.nativeViewStateStream().watch() { state in
-                    print("New State Received")
-                    print(state.debugDescription)
+        NavigationView {
+            VStack {
+                VStack(alignment: .center, spacing: 0.0) {
+                    ActivityIndicator(isAnimating: self.$isLoading, style: .large) //Linking activity indicator to isLoading property and its changes (Binding)
+                    Text("Hello World!")
+                    Text(textToDisplay).onAppear() {
+                        print("Appeared")
+                        self.mainViewModel.nativeViewStateStream().watch() { state in //Watching the viewModel not individual properties
+                            print("New State Received")
+                            if let state = state {
+                                self.repos = state.results
+                                self.isLoading = false //Changing property in turn changes activity indicator
+                            }
+                        }
+                    }
+                    Button(action: {
+                        self.textToDisplay = "Action triggered"
+                        self.mainViewModel.onAction(action: MainViewModel.UiActionLoadReposClicked())
+                        self.isLoading = true //Call returns so quickly that activity indicator
+                    }) {
+                        Text("Launch Async")
+                            .font(.body)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.orange)
+                            .cornerRadius(40)
+                            .padding()
+                        
+                    }
+                    
                 }
+                .background(Color.white)
+                RepoList(repos: repos)
             }
-            Button("Launch async") {
-                self.textToDisplay = "Action triggered"
-                self.mainViewModel.onAction(action: MainViewModel.UiActionLoadReposClicked())
-            }
+            .navigationBarTitle(Text("Repo Loader!"), displayMode: .inline)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        var contentView = ContentView()
+        contentView.mainViewModel = MainContainer.sharedContainer.container.resolve(MainViewModel.self)
+        return contentView
     }
 }
 
@@ -53,44 +83,40 @@ class AnnouncerImpl: Announcer {
 }
 
 
-class MainContainer {
-
-    static let sharedContainer = MainContainer()
-
-    let container = Container()
-
-    private init() {
-        setupDefaultContainers()
+class LoggerImpl: Logger {
+    func log(message: String) {
+        NSLog(message)
     }
+}
 
-    private func setupDefaultContainers() {
+extension GithubRepo: Identifiable { }
 
-        container.register(GithubRepoMapper.self) { _ in GithubRepoMapper() }
-        container.register(GithubService.self) { resolver in
-            return GithubServiceImpl(githubRepoMapper: resolver.resolve(GithubRepoMapper.self)!)
-        }
-        container.register(GithubRepoManager.self) { resolver in
-            return GithubRepoManager(githubService: resolver.resolve(GithubService.self)!)
-        }
-
-        container.register(Navigator.self) { _ in NavigatorImpl() }
-        container.register(Announcer.self) { _ in AnnouncerImpl() }
-        container.register(Logger.self) { _ in LoggerImpl() }
-        container.register(DispatcherProvider.self) { _ in DispatcherProvider() }
-
-        container.register(MainViewModel.self) { resolver in
-            let repoManager = resolver.resolve(GithubRepoManager.self)!
-            let navigator = resolver.resolve(Navigator.self)!
-            let announcer = resolver.resolve(Announcer.self)!
-            let dispatchProvider = resolver.resolve(DispatcherProvider.self)!
-            let logger = resolver.resolve(Logger.self)!
-            return MainViewModel(githubRepoManager: repoManager, navigator: navigator, announcer: announcer, dispatcherProvider: dispatchProvider, logger: logger)
+struct RepoList: View {
+    var repos: [GithubRepo]
+    var body: some View {
+        List(repos) { repo in
+            NavigationLink(destination: DetailsView(repo: repo)) {
+                Image(systemName: "photo")
+                Image(systemName: "play")
+                Text(repo.name)
+            }
         }
     }
 }
 
-class LoggerImpl: Logger {
-    func log(message: String) {
-        NSLog(message)
+struct ActivityIndicator: UIViewRepresentable {
+    
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+    
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        return UIActivityIndicatorView(style: style)
+    }
+    
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
+        uiView.isHidden = !isAnimating
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+        print("updating activity view to \(isAnimating)")
+        print("Activity indicator is hidden? \(uiView.isHidden)")
     }
 }
