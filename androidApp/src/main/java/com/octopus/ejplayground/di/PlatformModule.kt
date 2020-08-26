@@ -1,9 +1,7 @@
 package com.octopus.ejplayground.di
 
-import com.octopus.ejplayground.LoggerImpl
-import com.octopus.ejplayground.domain.GithubService
-import com.octopus.ejplayground.domain.Logger
-import com.octopus.ejplayground.services.GithubServiceImpl
+import com.octopus.ejplayground.common.platform.LoggerImpl
+import com.octopus.ejplayground.common.platform.Logger
 import dagger.Binds
 import dagger.Module
 
