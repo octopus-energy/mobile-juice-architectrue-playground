@@ -18,16 +18,10 @@ kotlin {
                 baseName = "shared"
             }
         }
-        compilations {
-            val main by getting {
-                kotlinOptions.freeCompilerArgs = listOf("-Xobjc-generics")
-            }
-        }
     }
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(kotlin("stdlib-common"))
                 implementation(KmpLibrary.serialisation)
                 implementation(KmpLibrary.coroutinesCore)
                 implementation(KmpLibrary.ktor)
@@ -43,18 +37,13 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation(kotlin("stdlib-jdk7"))
-                implementation(KmpLibrary.serialisation)
                 implementation(AndroidLibrary.javaInject)
                 implementation(AndroidLibrary.annotations)
                 implementation(AndroidLibrary.ktorOkHttpEngine)
-                implementation(KmpLibrary.ktorSerialisation)
             }
         }
         val iosMain by getting {
             dependencies {
-                implementation(KmpLibrary.serialisation)
-                implementation(KmpLibrary.ktorSerialisation)
                 implementation(NativeLibrary.ktorClientEngine)
             }
         }
@@ -67,7 +56,6 @@ kotlin {
                 freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
                 freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
                 freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.time.ExperimentalTime"
-                freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.serialization.UnstableDefault"
             }
         }
     }

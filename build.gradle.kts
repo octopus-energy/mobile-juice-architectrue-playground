@@ -3,7 +3,6 @@ buildscript {
         gradlePluginPortal()
         jcenter()
         google()
-        maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
         maven { url = uri("https://kotlin.bintray.com/kotlinx") }
     }
     dependencies {
@@ -22,7 +21,6 @@ allprojects {
         gradlePluginPortal()
         google()
         jcenter()
-        maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
         maven { url = uri("https://kotlin.bintray.com/kotlinx") }
     }
 }
