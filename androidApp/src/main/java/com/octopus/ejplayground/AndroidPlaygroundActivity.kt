@@ -1,13 +1,40 @@
 package com.octopus.ejplayground
 
 import android.os.Bundle
+import androidx.compose.foundation.Text
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.setContent
+import androidx.ui.tooling.preview.Preview
 import com.octopus.ejplayground.R
+import com.octopus.ejplayground.theme.EjPlaygroundTheme
 import dagger.android.support.DaggerAppCompatActivity
 
 class AndroidPlaygroundActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_android_playground)
+        setContent {
+            EjPlaygroundTheme() {
+                // A surface container using the 'background' color from the theme
+                Surface(color = MaterialTheme.colors.background) {
+                    Greeting("Android")
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello $name!")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    EjPlaygroundTheme {
+        Greeting("Android")
     }
 }

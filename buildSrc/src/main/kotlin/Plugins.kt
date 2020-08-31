@@ -1,5 +1,5 @@
-internal object PluginVersion {
-    val gradle = "4.0.1"
+object PluginVersion {
+    val gradle = "4.2.0-alpha08"
     val kotlin = "1.4.0"
     val navigationArgs = AndroidLibraryVersion.navigation
 }

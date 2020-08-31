@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.octopus.ejplayground.R
 import com.octopus.ejplayground.githubrepositories.entities.GithubRepo
-import kotlinx.android.synthetic.main.recycler_row.view.*
 
 class MainAdapter(
         private val listener: (GithubRepo) -> Unit
@@ -45,10 +44,10 @@ class MainAdapter(
             repository: GithubRepo,
             listener: (GithubRepo) -> Unit
         ) {
-            with(itemView) {
-                r_main_txt.text = repository.name
-                setOnClickListener { listener(repository) }
-            }
+//            with(itemView) {
+//                r_main_txt.text = repository.name
+//                setOnClickListener { listener(repository) }
+//            }
         }
     }
 }

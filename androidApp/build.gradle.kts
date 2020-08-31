@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-android")
 }
 group = "com.octopus.ejplayground"
 version = "1.0-SNAPSHOT"
@@ -25,6 +26,10 @@ dependencies {
     implementation(AndroidLibrary.navigation)
     implementation(AndroidLibrary.navigationUi)
     kapt(AndroidLibrary.databindingCompiler)
+
+    implementation(AndroidLibrary.composeUi)
+    implementation(AndroidLibrary.composeMaterial)
+    implementation(AndroidLibrary.composeTooling)
 
     implementation(AndroidLibrary.dagger)
     implementation(AndroidLibrary.daggerAndroid)
@@ -53,12 +58,17 @@ android {
         freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
         freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
         freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.time.ExperimentalTime"
+        useIR = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = AndroidLibraryVersion.compose
+        kotlinCompilerVersion = PluginVersion.kotlin
     }
 }
