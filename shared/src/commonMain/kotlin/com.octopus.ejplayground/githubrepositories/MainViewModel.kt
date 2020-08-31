@@ -31,19 +31,20 @@ class MainViewModel @MakeInjectable constructor(
     }
 
     private fun loadResults() {
+        logger.log("Load results")
         emit(lastViewState.copy(loadingIsVisible = true))
-        coroutineScope.launch {
-            try {
-                val result = withContext(dispatcherProvider.main) {
-                    githubRepoManager.fetchSortedRepos(TEST_USER)
-                }
-                emit(lastViewState.copy(loadingIsVisible = false, results = result))
-            } catch (e: Exception) {
-                logger.log("Exception = $e")
-                emit(lastViewState.copy(loadingIsVisible = false))
-                announcer.announce(e.toString())
-            }
-        }
+//        coroutineScope.launch {
+//            try {
+//                val result = withContext(dispatcherProvider.main) {
+//                    githubRepoManager.fetchSortedRepos(TEST_USER)
+//                }
+//                emit(lastViewState.copy(loadingIsVisible = false, results = result))
+//            } catch (e: Exception) {
+//                logger.log("Exception = $e")
+//                emit(lastViewState.copy(loadingIsVisible = false))
+//                announcer.announce(e.toString())
+//            }
+//        }
     }
 
     override fun defaultViewState(): ViewState {
