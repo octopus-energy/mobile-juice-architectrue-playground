@@ -10,6 +10,11 @@
 		334140B724ED3277003988E7 /* shared in Resources */ = {isa = PBXBuildFile; fileRef = 334140B624ED3277003988E7 /* shared */; };
 		3370DA2D24EEBE0700FBDEBE /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 3370DA2C24EEBE0700FBDEBE /* Resolver */; };
 		3370DA3024EEBF7500FBDEBE /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3370DA2F24EEBF7500FBDEBE /* Swinject */; };
+		33949BFB24F95B4800AA8289 /* NavigatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33949BFA24F95B4800AA8289 /* NavigatorImpl.swift */; };
+		33949BFD24F95BA300AA8289 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33949BFC24F95BA300AA8289 /* ActivityIndicator.swift */; };
+		33949C0224F95C5F00AA8289 /* AnnouncerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33949C0124F95C5F00AA8289 /* AnnouncerImpl.swift */; };
+		33949C0424F95C6E00AA8289 /* LoggerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33949C0324F95C6E00AA8289 /* LoggerImpl.swift */; };
+		33949C0924F95D4A00AA8289 /* GithubRepo+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33949C0824F95D4A00AA8289 /* GithubRepo+Additions.swift */; };
 		33C315DD24F5128800E300B6 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C315DC24F5128800E300B6 /* DetailsView.swift */; };
 		33CACBBC24F3BDC1000F6BE2 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CACBBB24F3BDC1000F6BE2 /* MainContainer.swift */; };
 		7555FF7F242A565900829871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF7E242A565900829871 /* AppDelegate.swift */; };
@@ -57,6 +62,11 @@
 
 /* Begin PBXFileReference section */
 		334140B624ED3277003988E7 /* shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shared; path = ../shared; sourceTree = "<group>"; };
+		33949BFA24F95B4800AA8289 /* NavigatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorImpl.swift; sourceTree = "<group>"; };
+		33949BFC24F95BA300AA8289 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		33949C0124F95C5F00AA8289 /* AnnouncerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncerImpl.swift; sourceTree = "<group>"; };
+		33949C0324F95C6E00AA8289 /* LoggerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerImpl.swift; sourceTree = "<group>"; };
+		33949C0824F95D4A00AA8289 /* GithubRepo+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GithubRepo+Additions.swift"; sourceTree = "<group>"; };
 		33C315DC24F5128800E300B6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		33CACBBB24F3BDC1000F6BE2 /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +114,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33949C0024F95C2B00AA8289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7555FF82242A565900829871 /* ContentView.swift */,
+				33949BFC24F95BA300AA8289 /* ActivityIndicator.swift */,
+				33C315DC24F5128800E300B6 /* DetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33949C0524F95C9600AA8289 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				33949BFA24F95B4800AA8289 /* NavigatorImpl.swift */,
+				33949C0124F95C5F00AA8289 /* AnnouncerImpl.swift */,
+				33949C0324F95C6E00AA8289 /* LoggerImpl.swift */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		33949C0624F95CAE00AA8289 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				33CACBBB24F3BDC1000F6BE2 /* MainContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		33949C0724F95CC600AA8289 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7555FF7E242A565900829871 /* AppDelegate.swift */,
+				7555FF80242A565900829871 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		33949C0A24F95D4F00AA8289 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				33949C0824F95D4A00AA8289 /* GithubRepo+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +184,11 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF7E242A565900829871 /* AppDelegate.swift */,
-				7555FF80242A565900829871 /* SceneDelegate.swift */,
-				7555FF82242A565900829871 /* ContentView.swift */,
-				33C315DC24F5128800E300B6 /* DetailsView.swift */,
-				33CACBBB24F3BDC1000F6BE2 /* MainContainer.swift */,
+				33949C0724F95CC600AA8289 /* Application */,
+				33949C0624F95CAE00AA8289 /* DI */,
+				33949C0024F95C2B00AA8289 /* Views */,
+				33949C0524F95C9600AA8289 /* Platform */,
+				33949C0A24F95D4F00AA8289 /* Extensions */,
 				7555FF84242A565B00829871 /* Assets.xcassets */,
 				7555FF89242A565B00829871 /* LaunchScreen.storyboard */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -340,9 +395,14 @@
 			files = (
 				7555FF7F242A565900829871 /* AppDelegate.swift in Sources */,
 				33C315DD24F5128800E300B6 /* DetailsView.swift in Sources */,
+				33949C0924F95D4A00AA8289 /* GithubRepo+Additions.swift in Sources */,
 				7555FF81242A565900829871 /* SceneDelegate.swift in Sources */,
+				33949BFB24F95B4800AA8289 /* NavigatorImpl.swift in Sources */,
 				33CACBBC24F3BDC1000F6BE2 /* MainContainer.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				33949C0424F95C6E00AA8289 /* LoggerImpl.swift in Sources */,
+				33949C0224F95C5F00AA8289 /* AnnouncerImpl.swift in Sources */,
+				33949BFD24F95BA300AA8289 /* ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

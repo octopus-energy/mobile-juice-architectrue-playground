@@ -10,6 +10,7 @@ import SwiftUI
 import shared
 
 struct DetailsView: View {
+    
     let repo: GithubRepo
     var body: some View {
         Button(action: {

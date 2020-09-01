@@ -9,6 +9,7 @@
 import Foundation
 import Swinject
 import shared
+import Combine
 
 class MainContainer {
 
@@ -24,12 +25,13 @@ class MainContainer {
 
         container.register(GithubRepoMapper.self) { _ in GithubRepoMapper() }
         container.register(GithubService.self) { resolver in
-            return GithubServiceImpl(githubRepoMapper: resolver.resolve(GithubRepoMapper.self)!)
+            return GithubService(githubRepoMapper: resolver.resolve(GithubRepoMapper.self)!)
         }
         container.register(GithubRepoManager.self) { resolver in
             return GithubRepoManager(githubService: resolver.resolve(GithubService.self)!)
         }
 
+        
         container.register(Navigator.self) { _ in NavigatorImpl() }
         container.register(Announcer.self) { _ in AnnouncerImpl() }
         container.register(Logger.self) { _ in LoggerImpl() }
