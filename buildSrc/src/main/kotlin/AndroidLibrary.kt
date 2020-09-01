@@ -1,4 +1,4 @@
-internal object AndroidLibraryVersion {
+object AndroidLibraryVersion {
     val appCompat = "1.1.0"
     val core = "1.0.2"
     val constraintLayout = "2.0.0-beta6"
@@ -9,6 +9,7 @@ internal object AndroidLibraryVersion {
     val dagger = "2.26"
     val coreKotlinExt = "1.2.0"
     val annotation = "1.1.0"
+    val compose = "1.0.0-alpha01"
 }
 
 object AndroidLibrary {
@@ -24,6 +25,10 @@ object AndroidLibrary {
     val databindingCompiler = "com.android.databinding:compiler:${PluginVersion.gradle}"
     val coreKotlinExt = "androidx.core:core-ktx:${AndroidLibraryVersion.coreKotlinExt}"
     val annotations = "androidx.annotation:annotation:${AndroidLibraryVersion.annotation}"
+
+    val composeUi = "androidx.compose.ui:ui:${AndroidLibraryVersion.compose}"
+    val composeMaterial = "androidx.compose.material:material:${AndroidLibraryVersion.compose}"
+    val composeTooling = "androidx.ui:ui-tooling:${AndroidLibraryVersion.compose}"
 
     val navigation = "androidx.navigation:navigation-fragment-ktx:${AndroidLibraryVersion.navigation}"
     val navigationUi = "androidx.navigation:navigation-ui-ktx:${AndroidLibraryVersion.navigation}"
